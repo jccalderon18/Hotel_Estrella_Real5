@@ -1,0 +1,101 @@
+﻿@model HotelEstrellaReal5.Models.Pago
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-xl-11">
+    <div class="card-box">
+
+        <h4 class="header-title m-t-0 m-b-30 text-center">Editar pago</h4>
+        <hr />
+        <form asp-action="Edit" id="formulario" onsubmit="enviarformulario(event)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdPago" />
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    <label asp-for="IdReserva" class="control-label"></label>
+                    <select asp-for="IdReserva" class="form-control" asp-items="ViewBag.IdReserva"></select>
+                    <span asp-validation-for="IdReserva" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="MedioPago" class="control-label"></label>
+                    <input asp-for="MedioPago" class="form-control" />
+                    <span asp-validation-for="MedioPago" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="PrecioInicial" class="control-label"></label>
+                    <input asp-for="PrecioInicial" class="form-control" />
+                    <span asp-validation-for="PrecioInicial" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="Adelanto" class="control-label"></label>
+                    <input asp-for="Adelanto" class="form-control" />
+                    <span asp-validation-for="Adelanto" class="text-danger"></span>
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    <label asp-for="PrecioRestante" class="control-label"></label>
+                    <input asp-for="PrecioRestante" class="form-control" />
+                    <span asp-validation-for="PrecioRestante" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="CostoPenalidad" class="control-label"></label>
+                    <input asp-for="CostoPenalidad" class="form-control" />
+                    <span asp-validation-for="CostoPenalidad" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="SubTotal" class="control-label"></label>
+                    <input asp-for="SubTotal" class="form-control" />
+                    <span asp-validation-for="SubTotal" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="Total" class="control-label"></label>
+                    <input asp-for="Total" class="form-control" />
+                    <span asp-validation-for="Total" class="text-danger"></span>
+                </div>
+               
+
+            </div>
+           
+            <div class="form-group text-right m-b-0">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function enviarformulario(event) {
+            event.preventDefault();
+
+            const inputs = document.querySelectorAll('input, textarea, select'); // Selecciona los inputs
+            let valid = true; // Inicializa la variable valid
+
+            if (valid) {
+                swal.fire({
+                    title: '¿Estás seguro que quieres guardar los cambios?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    allowOutsideClick: false,
+                    confirmButtonText: 'si'
+                }).then((resultado) => {
+                    if (resultado.isConfirmed) {
+                        const formulario = document.getElementById('formulario');
+                        formulario.submit();
+                    }
+                });
+            }
+
+        }
+    </script>
+}

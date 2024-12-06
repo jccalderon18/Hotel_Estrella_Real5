@@ -1,0 +1,90 @@
+﻿@model HotelEstrellaReal5.Models.Habitacione
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-6">
+    <div class="card-box">
+
+        <h4 class="header-title m-b-30 text-center">Eliminar habitación</h4>
+        <hr />
+        <address>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdHabitacion)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdHabitacion)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
+                <dd class="col-sm-8">
+                    <!-- Formatear el Precio en pesos colombianos sin decimales -->
+                    @Model.Precio?.ToString("C0", new System.Globalization.CultureInfo("es-CO"))
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdCategoriaNavigation.Nombre)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdEstadoHabitacionNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdEstadoHabitacionNavigation.NombreEstadoHabitacion)
+                </dd>
+            </dl>
+        </address>
+
+        <address class="text-center">
+            <form asp-action="Delete" id="formulario" onsubmit="enviarformulario(event)">
+                <input type="hidden" asp-for="IdHabitacion" />
+                <button type="submit" class="btn btn-danger waves-effect waves-light m-l-5">Eliminar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Salir</a>
+            </form>
+        </address>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function enviarformulario(event) {
+            event.preventDefault();
+
+            swal.fire({
+                title: '¿Estás seguro que quieres eliminar esta habitación?',
+                icon: 'warning',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                confirmButtonText: 'si'
+            }).then((resultado) => {
+                if (resultado.isConfirmed) {
+                    const formulario = document.getElementById('formulario');
+                    formulario.submit();
+                }
+            })
+        }
+    </script>
+}

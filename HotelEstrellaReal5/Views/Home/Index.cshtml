@@ -1,0 +1,583 @@
+﻿@{
+    ViewData["Title"] = "pagina de Aterrizaje";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="shortcut icon" href="Imagenes/favicon.ico">
+
+    <title>Hotel Estrella Real</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Slider-->
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.css" />
+    <link rel="stylesheet" href="css/owl.transitions.css" />
+
+    <!-- Icon CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/vistaclientes.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body data-spy="scroll" data-target="#navbar-menu">
+
+    <!-- Navbar -->
+    <div class="navbar navbar-custom navbar-expand-md sticky fixed-top" role="navigation" id="sticky-nav">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand logo" href="index.html">
+                <img src="~/Imagenes/LogoEstrellaRealHotel.png" alt="logo" height="24">
+            </a>
+
+            <!-- Responsive menu button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+
+            <!-- menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Navbar right -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Habitaciones" class="nav-link">Habitaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pricing" class="nav-link">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">Confort</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Servicios" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-white-bordered navbar-btn m-4" asp-area="" asp-controller="Acceso" asp-action="Login"><i class="fa-solid fa-user-shield"></i> Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-white-bordered navbar-btn" asp-area="" asp-controller="Acceso" asp-action="Registrarse"><i class="fa-solid fa-file-pen"></i> Registrarse</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!--/Menu -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- End navbar-custom -->
+    <!-- HOME -->
+    <section class="home bg-img-1" id="home">
+        <div class="bg-overlay"></div>
+        <div class="">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="home-fullscreen">
+                        <div class="full-screen">
+                            <div class="home-wrapper home-wrapper-alt">
+                                <img class="Bastion" src="~/Imagenes/bastion hotel.jpeg" alt="Alternate Text" />
+                                <h1 class="text-white">Conecta con Nuestra Identidad</h1>
+                                <hr class="lineatex" />
+
+                                <h5 class="text-white">
+                                    Descubre un mundo donde la belleza se une a la comodidad. Te invitamos a disfrutar de vistas impresionantes que te dejarán sin aliento, acompañadas de servicios diseñados especialmente para tu bienestar.
+                                    Desde espacios acogedores hasta atención personalizada, cada detalle está pensado para ofrecerte una experiencia única. Ven y vive momentos inolvidables en un lugar donde cada amanecer y atardecer son un regalo para tus sentidos. ¡Te esperamos!
+                                </h5>
+
+                                <form id="form1" runat="server">
+                                    <div class="gallery">
+                                        <div class="gallery-item" onclick="openModal(this)">
+                                            <img src="~/Imagenes/Entrada_hotel.jpg" alt="Spa Imagen 1" data-text="!HOTEL ESTRELLA REAL!
+
+                                             somos un establecimiento con más de 30 años de experiencia en el sector hotelero, brindando a nuestros clientes un servicio de calidad y confort inigualable. A lo largo de nuestra trayectoria, hemos perfeccionado cada uno de los detalles para garantizar que nuestros huéspedes disfruten de una experiencia única, memorable y totalmente personalizada.
+                                             Ubicados en un entorno privilegiado, rodeados de belleza natural, nuestro objetivo siempre ha sido ofrecer un refugio de paz y relajación, donde cada visita se convierte en una oportunidad para desconectar, renovarse y disfrutar de lo mejor de la vida. Nos enorgullece combinar la calidez de un trato cercano con las más modernas comodidades, garantizando que cada huésped se sienta como en casa desde el primer momento. " />
+                                            <h3 class="gallery-title">Nosotros</h3>
+
+                                        </div>
+                                        <div class="gallery-item" onclick="openModal(this)">
+                                            <img src="~/Imagenes/faro_EstrellaReal.jpg" alt="Spa Imagen 2" data-text="! Orgullosamente esta es nuestra Historia !
+
+                                             En el año 1989, en una hermosa costa bañada por las olas del océano, se encontraba un antiguo faro, solitario y majestuoso, que había guiado a los navegantes durante generaciones. Con el paso del tiempo, el faro había dejado de funcionar, pero su estructura de piedra seguía en pie, resistiendo las tempestades y el paso del tiempo.
+                                             Un grupo de emprendedores, amantes del mar y la naturaleza, vio en el faro una oportunidad única. Decidieron transformarlo en un hotel, fusionando la historia del lugar con la calidez de la hospitalidad. Tras meses de trabajo, restauraron el faro y construyeron ESTRELLA REAL ! , un acogedor hotel que se extiende hacia la playa, ofreciendo impresionantes vistas al mar.
+                                             El hotel ESTRELLA REAL abrió sus puertas en una mañana radiante. Los huéspedes quedaron deslumbrados por la belleza del lugar, con sus habitaciones decoradas con tonos azul y blanco, evocando el mar y la brisa marina. La cercanía al océano brindaba una experiencia única, desde el sonido relajante de las olas hasta los espectaculares atardeceres que iluminan el cielo.
+                                             Con el tiempo, el hotel se ha convirtido en un refugio para quienes buscaban escapar de la rutina. Parejas románticas vienen a disfrutar de cenas a la luz de las velas en la playa, las familias se reunen para construir castillos de arena y viajeros solitarios encuentran inspiración en la tranquilidad del entorno.
+                                             A lo largo de los años, el hotel ESTRELLA REAL se destaca por sus actividades únicas, como clases de surf, paseos en kayak,actividad de  buseo entre otros. La atención del personal, siempre amable y atento, hacen que los huéspedes se sientan como en casa. Muchos regresan cada año, creando lazos con el hotel y con otros visitantes.
+                                             Cada año para celebrar su aniversario, el hotel organizó un festival a la orilla del mar. Los invitados disfrutan de música en vivo, deliciosos platillos marinos y una espectacular exhibición de fuegos artificiales que ilumina el cielo nocturno. En medio de la celebración, los fundadores comparten su historia y agradecen a todos por ser parte de la familia ESTRELLA REAL.
+                                             Hoy, el Hotel ESTRELLA REAL no solo es un lugar donde los huéspedes encuentran refugio, sino un lugar donde los recuerdos se tejen a la orilla del mar, donde el sonido de las olas y el aroma del océano se mezclan con la calidez de la hospitalidad. Cada rincón del hotel guarda la esencia de quienes lo han visitado, convirtiéndolo en un destino verdaderamente especial y lleno de vida." />
+                                            <h3 class="gallery-title">Nuestra Historia</h3>
+                                        </div>
+                                        <div class="gallery-item" onclick="openModal(this)">
+                                            <img src="~/Imagenes/Bocagrande.jpg" alt="Spa Imagen 3" data-text="!  La Bahía Moderna de Cartagena de Indias: Un Encuentro Entre Historia, Belleza y Modernidad... !
+
+                                            Estamos ubicados en la ciudad de Cartagena, en la carrera 57 # 51-83, a tan solo 10 minutos del aeropuerto internacional Rafael Nuñez y a 5 minutos del centro historico de la ciudad. Bahía Moderna de cartagena, con su agua turquesa y un clima cálido y agradable durante todo el año, la Bahía Moderna se ha convertido en el corazón palpitante de la Cartagena contemporánea. Sus modernas infraestructuras y su incesante actividad portuaria la convierten en un lugar clave para el comercio y la conectividad marítima, mientras que su cercanía al centro histórico de la ciudad y a zonas de gran interés turístico, como el barrio Bocagrande, la posiciona como un atractivo de primer orden para los turistas." />
+                                            <h3 class="gallery-title"> Ubicación</h3>
+                                        </div>
+                                        <div class="gallery-item" onclick="openModal(this)">
+                                            <img src="~/Imagenes/Amazonia.jpg" alt="Spa Imagen 4" data-text="En el Hotel Estrella Real nos proponemos alcanzar una serie de objetivos estratégicos que nos permitan crecer y ofrecer un servicio aún más excepcional a nuestros huéspedes. Entre ellos destacan:
+                                             Incrementar la satisfacción del cliente mediante la mejora continua de nuestros servicios y la implementación de tecnologías innovadoras que optimicen la experiencia del huésped.
+                                             Fortalecer nuestra oferta sostenible integrando prácticas ecológicas, reduciendo el consumo energético y promoviendo el uso de productos locales y orgánicos en nuestra cocina y servicios.
+                                             Expandir nuestra presencia mediante la apertura de nuevas propiedades en destinos estratégicos, manteniendo siempre el estándar de calidad que nos caracteriza." />
+                                            <h3 class="gallery-title">Objetivos Estrategicos</h3>
+                                        </div>
+                                    </div>
+
+                                    <div id="modal" class="modal" onclick="closeModal()">
+                                        <span class="close" onclick="closeModal()">×</span>
+                                        <img class="modal-content" id="modal-image" />
+                                        <p id="modal-text"></p>
+                                    </div>
+                                </form>
+
+                                @* <a href="" class="ReservaA btn btn-custom m-t-20">Reserva Ahora</a> *@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END HOME -->
+    <!-- Features -->
+    <section class="section" id="features">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="text-muted text-uppercase"><b><i class="fa-regular fa-star"></i> ..Estrella Real.. <i class="fa-solid fa-crown"></i></b></p>
+                    <h3 class="title">"Vive tu propia Experiencia"</h3>
+                    <p class="text-muted sub-title">Descubre quiénes somos y nuestra pasión por ofrecer un servicio excepcional,<br /> ubicado en un lugar estratégico que te conecta con lo mejor de la ciudad.</p>
+                </div>
+            </div> <!-- end row -->
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="features-box">
+                        <i class="fa fa-users"></i>
+                        <h5 class="my-3">Misión</h5>
+                        <p class="text-muted m-b-0">En el Hotel Estrella Real nos comprometemos a ofrecer a nuestros huéspedes una experiencia única de confort, tranquilidad y excelencia. Ubicados en un entorno privilegiado, fusionamos la belleza natural con un servicio personalizado y de alta calidad.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="features-box">
+                        <i class="fa fa-umbrella"></i>
+                        <h5 class="my-3">Visión</h5>
+                        <p class="text-muted m-b-0">Nos comprometemos a ser líderes en calidad, innovación y sostenibilidad, creando un refugio donde cada detalle está diseñado para superar las expectativas y proporcionar momentos memorables que enriquezcan el alma y el espíritu.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="features-box">
+                        <i class="fa fa-shirtsinbulk"></i>
+                        <h5 class="my-3">Nuestros Valores</h5>
+                        <p class="text-muted m-b-0">Nuestros valores incluyen la hospitalidad, la integridad y el respeto por el medio ambiente, trabajamos continuamente para mejorar nuestras prácticas y minimizar nuestro impacto ecológico.</p>
+                    </div>
+                </div>
+
+            </div> <!-- end row -->
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="features-box">
+                        <i class="fa fa-globe"></i>
+                        <h5 class="my-3">Compromiso con la Comunidad</h5>
+                        <p class="text-muted m-b-0"></p>En el Hotel Estrella Real, creemos que el éxito de nuestro negocio está íntimamente ligado al bienestar de la comunidad en la que operamos. Nos comprometemos a: <br />
+                        * Promover el desarrollo local <br />
+                        * Fomentar el voluntariado y la colaboración <br />
+                        * Contribuir al turismo responsable
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="features-box">
+                        <i class="fa fa-umbrella"></i>
+                        <h5 class="my-3">Bienestar y Confort</h5>
+                        <p class="text-muted m-b-0">Ofrecemos a nuestros huéspedes un entorno relajante, donde cada detalle está diseñado para promover la tranquilidad y la renovación. cada experiencia está pensada para ayudarte a desconectar del estrés diario y reconectar contigo mismo.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="features-box">
+                        <i class="fa fa-language"></i>
+                        <h5 class="my-3">Actividades Recreativas</h5>
+                        <p class="text-muted m-b-0">Explora la belleza de los alrededores con nuestras actividades recreativas, que incluyen paseos en bicicleta, tours guiados y deportes acuáticos, para que vivas una aventura única.</p>
+                    </div>
+                </div>
+
+            </div> <!-- end row -->
+
+        </div> <!-- end container -->
+    </section>
+    <!-- end Features -->
+    <!-- Features Alt -->
+    <section class="section bg-gray" id="Habitaciones">
+        <div class="container">
+
+            <div class="row">
+                <div class="carrusel col-md-6">
+                    <div class="imagenes">
+                        <img class="img-fluid fade" src="~/Imagenes/Habitacion_especial2.jpg" alt="" />
+                        <img class="img-fluid fade" src="~/Imagenes/habitacion_familiar1.png" alt="">
+                        <img class="img-fluid fade" src="~/Imagenes/habitacion_sencilla1.jpg" alt="" />
+                        <img class="img-fluid fade" src="~/Imagenes/suit2.png" alt="" />
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-5 offset-md-1">
+                    <div class="feat-description">
+                        <h4>Habitaciones con diseños exclusivos y comodidades modernas.</h4>
+                        <p class="text-muted">
+                            <i>
+                                Nuestras habitaciones te brindan el confort y la tranquilidad que mereces, creando un espacio ideal para desconectar del estrés diario, todo está diseñado para que te sientas como en casa.
+                            </i>
+                        </p>
+
+                        <p class="text-muted">habitaciones con espacios amplios y una gran variedad de comodidades que se ajustan a tus necesidades .</p>
+
+                        @* <a href="" class="btn btn-custom">Reservar Ahora</a>
+                    </div> *@
+                </div>
+
+            </div><!-- end row -->
+
+        </div> <!-- end container -->
+    </section>
+    <!-- end features alt -->
+    <!-- Testimonials section -->
+    <section class="section bg-dark" id="Servicios">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="owl-testi text-center">
+                        <div class="item">
+                            <div class="testimonial-box">
+                                <h2>Bebidas y Cocteles </h2>
+                                <img src="~/Imagenes/bar 5.jpeg" class="testi-user rounded-circle" alt="testimonials-user">
+                                <p>En nuestro hotel, el bar está disponible las 24 horas, ofreciendo un ambiente vibrante y acogedor donde podrás relajarte en cualquier momento del día o la noche. Con una cuidada selección de licores de alta calidad y una extensa variedad de cócteles.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-box">
+                                <h2>SPA</h2>
+                                <img src="~/Imagenes/Spa3.jpg" class="testi-user rounded-circle" alt="testimonials-user">
+                                <p>Nuestro spa es un oasis de tranquilidad diseñado para revitalizar tu cuerpo y mente, ofrecemos una variedad de tratamientos personalizados, desde masajes terapéuticos y faciales rejuvenecedores hasta envolturas corporales que nutren la piel.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-box">
+                                <h2>Gimnasio</h2>
+                                <img src="~/Imagenes/Gimnasio3.jpg" class="testi-user rounded-circle" alt="testimonials-user">
+                                <p>Nuestro gimnasio está diseñado para inspirarte y motivarte en cada entrenamiento. Equipado con maquinaria de última generación y una amplia gama de pesos libres, encontrarás todo lo que necesitas para alcanzar tus metas de fitness.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-box">
+                                <h2>Buseo</h2>
+                                <img src="~/Imagenes/Buseo.png" class="testi-user rounded-circle" alt="testimonials-user">
+                                <p>En el Hotel Estrella Real, nos complace ofrecer a nuestros huéspedes una experiencia inolvidable bajo las aguas del mar Caribe. Gracias a nuestra ubicación privilegiada, te invitamos a explorar los fascinantes paisajes submarinos que rodean nuestra región a través de nuestro exclusivo servicio de buceo en el mar.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-box">
+                                <h2>Bici Tours</h2>
+                                <img src="~/Imagenes/bicicletas.jpg" class="testi-user rounded-circle" alt="testimonials-user">
+                                <p>En el Hotel Estrella Real, entendemos que una de las mejores maneras de disfrutar de la belleza natural que nos rodea es a través de una experiencia activa y divertida. Por eso, ofrecemos a nuestros huéspedes la oportunidad de explorar las hermosas playas de Cartagena de una forma única y emocionante: con nuestros Bici Tours por la Playa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End Testimonials section -->
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="title">Eventos</h3>
+                    <p class="text-muted sub-title">Contamos con espacios para cualquier tipo de evento, Si deseas realizar eventos en nuestras instalaciones,<br /> por favor comunicate con nosotros y te brindaremos toda la información.</p>
+                </div>
+            </div> <!-- end row -->
+
+
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="row">
+
+                        <!--Pricing Column-->
+                        <article class="pricing-column col-lg-4 col-md-4">
+                            <div class="inner-box">
+                                <div class="plan-header text-center">
+                                    <h3 class="plan-title">Auditorio</h3>
+
+                                </div>
+                                <ul class="plan-stats list-unstyled">
+                                    <li> <i class="fa fa-check-square-o"></i>Instalaciones Adecuadas </li>
+                                    <li> <i class="fa fa-check-square-o"></i>Equipos de Sonido</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Equipos de Audio</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Personal de Servico</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Capacidad para 300 personas </li>
+                                </ul>
+                               @*  <h2 class="plan-price">$2000</h2>
+                                <div class="plan-duration">Dolares</div>
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-sm btn-custom">Reserva Ahora</a> *@
+                                
+                            </div>
+                        </article>
+
+
+                        <!--Pricing Column-->
+                        <article class="pricing-column col-lg-4 col-md-4">
+                            <div class="inner-box active">
+                                <div class="plan-header1 text-center">
+                                    <h3 class="plan-title">Salon de Eventos</h3>
+
+                                </div>
+                                <ul class="plan-stats list-unstyled">
+                                    <li> <i class="fa fa-check-square-o"></i>Instalaciones con luces</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Equipos de Sonido</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Equipos de Audio</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Personal de servicio</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Capacidad para 200 Personas</li>
+                                </ul>
+                                @* <h2 class="plan-price">$1200</h2>
+                                <div class="plan-duration">Dolares</div>
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-sm btn-custom">Reserva Ahora</a>
+                                </div> *@
+                            </div>
+                        </article>
+
+
+                        <!--Pricing Column-->
+                        <article class="pricing-column col-lg-4 col-md-4">
+                            <div class="inner-box">
+                                <div class="plan-header2 text-center">
+                                    <h3 class="plan-title">Sala Reuniones</h3>
+
+                                </div>
+                                <ul class="plan-stats list-unstyled">
+                                    <li> <i class="fa fa-check-square-o"></i>Instalaciones Adecuadas</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Equipos de Sonido</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Equipos de Audio</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Personal de Servicio</li>
+                                    <li> <i class="fa fa-check-square-o"></i>Capacidad para 20 Personas</li>
+                                </ul>
+                                @* <h2 class="plan-price">$600</h2>
+                                <div class="plan-duration">Dolares</div>
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-sm btn-custom">Reserva Ahora</a>
+                                </div> *@
+                            </div>
+                        </article>
+
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div> <!-- end container -->
+    </section>
+    <!-- End Pricing -->
+    <!-- Get Started -->
+    <section class="section bg-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="get-started text-center">
+                        <h2><b>Gastronomia</b></h2>
+                        <img src="~/Imagenes/platos1.jpg" alt="Alternate Text" />
+                        <h4>Disfruta de una experiencia culinaria excepcional en nuestro restaurante, donde ofrecemos una variedad de platos locales e internacionales preparados por chefs de renombre.</h4>
+                       @*  <a href="" class="btn btn-white-bordered">Join for FREE</a> *@
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div> <!-- end container -->
+    </section>
+    <!-- end Get Started -->
+    <!-- Clients -->
+    <section class="section" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h3 class="title">Areas de Descanso</h3>
+                    <p class="text-muted sub-title">Contamos con multiples zonas de relajación, desde comodas areas de descanso al aire libre, <br /> hasta espacios interiores que promueven la calma y la tranquilidad.</p>
+                </div>
+            </div>
+            <!-- end row -->
+
+
+            <div class="row team text-center">
+                <!-- team-member -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="~/Imagenes/casa-hotel.jpeg" alt="team-member" class="img-responsive">
+                        <h4>Zonas Internas</h4>
+                        <p class="text-muted">Espacios diseñados con un estilo ecológico para la relajación y el bienestar.</p>
+                    </div>
+                </div>
+
+                <!-- team-member -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="~/Imagenes/charlseton-hotel.jpeg" alt="team-member" class="img-responsive">
+                        <h4>Serenidad y Confort</h4>
+                        <p class="text-muted">Espacio al aire libre diseñado para la relajación y el disfrute del sol.</p>
+                    </div>
+                </div>
+
+                <!-- team-member -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="~/Imagenes/regency-hotel.jpeg" alt="team-member" class="img-responsive">
+                        <h4>Zonas Humedas</h4>
+                        <p class="text-muted">Piscina al aire libre para disfrutar en familia, con excelente vista al mar. </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--End  Clients -->
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <span class="copy-txt text-center">&copy; 2024 Todos los derechos reservados.</span>
+                </div>
+               @*  <div class="col-lg-4 offset-lg-1">
+                    <ul class="footer-menu list-inline text-center">
+
+                        <li class="list-inline-item"><a href="#">Pricing</a></li>
+                        <li class="list-inline-item"><a href="#">Team</a></li>
+                        <li class="list-inline-item"><a href="#">Login</a></li>
+                    </ul>
+                </div> *@
+                <div class="col-lg-3">
+                    <ul class="social-icons text-right">
+                        <li><a href="https://www.facebook.com/?locale=es_LA"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://x.com/?lang=es"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                    <a class="navbar-brand logo" href="index.html">
+                        Estrella<span class="text-custom">Real</span>
+                    </a>
+                </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </footer>
+    <!-- End Footer -->
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scrollspy.min.js" type="text/javascript"></script>
+
+    <!-- Jquery easing -->
+    <script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+    <!--sticky header-->
+    <script type="text/javascript" src="js/jquery.sticky.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/jquery.app.js"></script>
+
+    <script type="text/javascript">
+        $('.owl-testi').owlCarousel({
+            autoPlay: 3000,
+            stopOnHover: true,
+            navigation: false,
+            paginationSpeed: 1000,
+            goToFirstSpeed: 2000,
+            singleItem: true,
+            autoHeight: true,
+            transitionStyle: "fade"
+        })
+    </script>
+    <script>
+        let index = 0;
+        const Imagenes = document.querySelectorAll('.fade');
+
+        function showNextImage() {
+            Imagenes[index].classList.remove('show');
+            index = (index + 1) % Imagenes.length;
+            Imagenes[index].classList.add('show');
+        }
+
+        Imagenes[index].classList.add('show'); // Mostrar la primera imagen
+        setInterval(showNextImage, 3000); // Cambiar cada 3 segundos
+
+    </script>
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById("modal");
+            const modalImage = document.getElementById("modal-image");
+            const modalText = document.getElementById("modal-text"); // Nuevo elemento para mostrar el texto
+
+            // Mostrar el modal
+            modal.style.display = "flex";
+
+            // Obtener y asignar la imagen al modal
+            modalImage.src = element.querySelector("img").src;
+
+            // Obtener y asignar el texto desde el atributo 'data-text' al modal
+            const text = element.querySelector("img").getAttribute("data-text");
+            modalText.innerText = text; // Mostrar el texto en el modal
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+
+        // Script para el modal de servicios
+        function showModal(element) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "flex";
+            modalImg.src = element.querySelector("img").src;
+        }
+
+        function hideModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

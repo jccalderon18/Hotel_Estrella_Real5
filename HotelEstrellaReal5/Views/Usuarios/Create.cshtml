@@ -1,0 +1,70 @@
+﻿@model HotelEstrellaReal5.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-xl-11">
+    <div class="card-box">
+
+        <h4 class="header-title m-t-0 m-b-30 text-center">Crear Usuario</h4>
+        <hr />
+        <form asp-action="Create" id="formulario" onsubmit="enviarformulario(event)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="NombreCompleto" class="control-label">NombreCompleto *</label>
+                    <input asp-for="NombreCompleto" class="form-control" placeholder="Ingrese su nombre completo" />
+                    <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="Email" class="control-label">Correo electrónico *</label>
+                    <input asp-for="Email" class="form-control" placeholder="Ingrese su correo electronico" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Clave" class="control-label">Contraseña *</label>
+                    <input asp-for="Clave" class="form-control" placeholder="Ingrese una contraseña" />
+                    <span asp-validation-for="Clave" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="ConfirmarClave" class="control-label">Confirmar Contraseña *</label>
+                    <input asp-for="ConfirmarClave" class="form-control" placeholder="Ingrese una contraseña" />
+                    <span asp-validation-for="ConfirmarClave" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-5">
+                    <label asp-for="IdCliente" class="control-label">Identificación *</label>
+                    <input asp-for="IdCliente" class="form-control" placeholder="Ingrese su numero de identificación" />
+                    <span asp-validation-for="IdCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group col-7">
+                    <label asp-for="IdRol" class="control-label">Rol de usuario *</label>
+                    <select asp-for="IdRol" class="form-control" asp-items="ViewBag.IdRol"></select>
+                </div>
+            </div>
+
+
+            <div class="form-group text-right m-b-0">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

@@ -1,0 +1,55 @@
+﻿@model HotelEstrellaReal5.Models.Servicio
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-6">
+    <div class="card-box">
+
+        <h4 class="header-title m-b-30 text-center">Detalles servicio</h4>
+        <hr />
+        <address>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdServicio)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdServicio)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Valor)
+                </dt>
+                <dd class="col-sm-8">
+                    <!-- Formatear el valor en pesos colombianos sin decimales -->
+                    @Model.Valor?.ToString("C0", new System.Globalization.CultureInfo("es-CO"))
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdEstadoNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdEstadoNavigation.Estado1)
+                </dd>
+            </dl>
+        </address>
+
+        <address class="text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdServicio" class="btn btn-success waves-effect waves-light m-l-5">Editar</a>
+            <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Salir</a>
+        </address>
+
+    </div>
+</div>

@@ -1,0 +1,86 @@
+﻿@model HotelEstrellaReal5.Models.Pago
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-6">
+    <div class="card-box">
+
+        <h4 class="header-title m-b-30 text-center">Detalles del pago</h4>
+        <hr />
+        <address>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdReservaNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdReservaNavigation.IdReserva)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.MedioPago)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.MedioPago)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.PrecioInicial)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.PrecioInicial)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Adelanto)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Adelanto)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.PrecioRestante)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.PrecioRestante)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.CostoPenalidad)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CostoPenalidad)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.SubTotal)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.SubTotal)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Total)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Total)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Observacion)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Observacion)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.FechaRegistro)
+                </dd>
+            </dl>
+        </address>
+
+        <address class="text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdPago" class="btn btn-success waves-effect waves-light m-l-5">Editar</a>
+            <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Salir</a>
+        </address>
+
+
+    </div>
+</div>

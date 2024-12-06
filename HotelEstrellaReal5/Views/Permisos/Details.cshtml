@@ -1,0 +1,44 @@
+﻿@model HotelEstrellaReal5.Models.Permiso
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-6">
+    <div class="card-box">
+
+        <h4 class="header-title m-b-30 text-center">Detalles permiso</h4>
+        <hr />
+        <address>
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.IdPermiso)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.IdPermiso)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+            </dl>
+        </address>
+
+        <address class="text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdPermiso" class="btn btn-success waves-effect waves-light m-l-5">Editar</a>
+            <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Salir</a>
+        </address>
+
+
+    </div>
+</div>

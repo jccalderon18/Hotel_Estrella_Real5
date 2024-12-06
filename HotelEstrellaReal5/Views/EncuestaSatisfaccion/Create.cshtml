@@ -1,0 +1,211 @@
+﻿@model HotelEstrellaReal5.Models.EncuestaSatisfaccion
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-xl-11">
+    <div class="card-box">
+
+
+        <h4 class="header-title m-t-0 m-b-30 text-center"> Encuesta de satisfacción</h4>
+        <h4 class="text-custom text-center">Gracias por haberte hospedado en el Hotel Estrella Real. Queremos conocer tu opinión sobre diversos aspectos de tu estadía.</h4>
+        <hr />
+        <h4 class="">Por favor, califica de 1 a 5, donde:</h4>
+        <form asp-action="Create" id="formulario" onsubmit="enviarformulario(event)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <ul class="text-success col-sm-4">
+                    <li><strong>1</strong>: Muy insatisfecho</li>
+                    <li><strong>2</strong>: Insatisfecho</li>
+                    <li><strong>3</strong>: Aceptable</li>
+                    <li><strong>4</strong>: Satisfecho</li>
+                    <li><strong>5</strong>: Muy satisfecho</li>
+                </ul>
+                <div class="form-group col-sm-4">
+                    <label for="IdReserva">Selecciona una Reserva</label>
+                    <select class="form-control" id="IdReserva" name="IdReserva">
+                        <option value="">Seleccionar...</option>
+                        @foreach (var item in ViewData["IdReserva"] as SelectList)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- Pregunta sobre Limpieza -->
+            <div class="question">
+                <label class="text-white" for="calificacionLimpieza">¿Cómo calificarías la limpieza en las instalaciones?</label>
+                <div class="stars" id="calificacionLimpieza">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="calificacionLimpiezaInput" name="CalificacionLimpieza" />
+            </div>
+
+            <!-- Pregunta sobre Servicios -->
+            <div class="question">
+                <label for="calificacionServicios">¿Cómo calificarías los servicios ofrecidos por el hotel (Wi-Fi, SPA, etc.)?</label>
+                <div class="stars" id="calificacionServicios">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="calificacionServiciosInput" name="CalificacionServicios" />
+            </div>
+
+            <!-- Pregunta sobre Comida -->
+            <div class="question">
+                <label for="calificacionComida">¿Qué tan satisfecho estás con la calidad de la comida que ofrecimos durante tu estadía?</label>
+                <div class="stars" id="calificacionComida">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="calificacionComidaInput" name="CalificacionComida" />
+            </div>
+
+            <!-- Pregunta sobre Habitaciones -->
+            <div class="question">
+                <label for="calificacionHabitacion">¿Cómo calificarías la comodidad y limpieza de tu habitación?</label>
+                <div class="stars" id="calificacionHabitacion">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="calificacionHabitacionInput" name="CalificacionHabitacion" />
+            </div>
+
+            <!-- Pregunta sobre Atención -->
+            <div class="question">
+                <label for="calificacionAtencion">¿Cómo calificarías la atención recibida por el personal durante tu estadía?</label>
+                <div class="stars" id="calificacionAtencion">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="calificacionAtencionInput" name="CalificacionAtencion" />
+            </div>
+
+            <!-- Pregunta sobre Instalaciones -->
+            <div class="question">
+                <label for="calificacionInstalaciones">¿Qué tan satisfactorias fueron las instalaciones del hotel (piscina, gimnasio, etc.)?</label>
+                <div class="stars" id="calificacionInstalaciones">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" for=CalificacionInstalaciones id="calificacionInstalacionesInput" name="CalificacionInstalaciones" />
+            </div>
+            <hr />
+            <div class="form-group text-right m-b-0">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        // Guardar la calificación de cada pregunta
+        let ratings = {
+            calificacionLimpieza: null,
+            calificacionServicios: null,
+            calificacionComida: null,
+            calificacionHabitacion: null,
+            calificacionAtencion: null,
+            calificacionInstalaciones: null
+        };
+
+        // Función para manejar el clic en las estrellas
+        function handleStarClick(event) {
+            const stars = event.target.parentNode.children;
+            const value = event.target.getAttribute("data-value");
+
+            // Rellenar las estrellas hasta el valor seleccionado
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].style.color = i < value ? "gold" : "gray";
+            }
+
+            // Guardar la calificación seleccionada en el objeto ratings
+            const questionId = event.target.parentNode.id; // Obtiene el id de la pregunta (calificacionLimpieza, calificacionServicios, etc.)
+            ratings[questionId] = value;  // Guardar el valor de la calificación
+
+            // Actualizar el valor del input oculto
+            const hiddenInput = document.getElementById(questionId + "Input");
+            hiddenInput.value = value; // Asignar el valor de la calificación al campo oculto
+        }
+
+        // Asignar eventos a cada estrella
+        const starElements = document.querySelectorAll('.star');
+        starElements.forEach(star => {
+            star.addEventListener('click', handleStarClick);
+        });
+
+        // Función para manejar el envío de la encuesta
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            // Comprobar que todas las preguntas tengan respuesta
+            if (Object.values(ratings).includes(null)) {
+                alert("Por favor, califica todas las preguntas antes de enviar.");
+                return;
+            }
+
+            // Si todas las preguntas tienen respuesta, enviar los datos
+            const encuesta = {
+                IdReserva: document.getElementById("IdReserva").value,
+                CalificacionLimpieza: ratings.CalificacionLimpieza,
+                CalificacionServicios: ratings.CalificacionServicios,
+                CalificacionComida: ratings.CalificacionComida,
+                CalificacionHabitacion: ratings.CalificacionHabitacion,
+                CalificacionAtencion: ratings.CalificacionAtencion,
+                CalificacionInstalaciones: ratings.CalificacionInstalaciones
+            };
+
+            // Aquí puedes enviar los datos al controlador (por ejemplo, mediante AJAX o un formulario)
+            alert("¡Gracias por tu opinión! La encuesta ha sido enviada.");
+            console.log(encuesta); // Aquí puedes ver la encuesta que se enviaría
+        });
+    </script>
+}
+
+<style>
+    .stars {
+        font-size: 2em;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .star {
+        cursor: pointer;
+        color: gray;
+        transition: color 0.3s;
+    }
+
+        .star:hover {
+            color: gold;
+        }
+
+    button {
+        margin-top: 20px;
+    }
+</style>

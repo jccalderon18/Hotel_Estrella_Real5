@@ -1,0 +1,112 @@
+﻿@model HotelEstrellaReal5.Models.Reserva
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-xl-11">
+    <div class="card-box">
+
+        <h4 class="header-title m-t-0 m-b-30 text-center">Editar Reserva</h4>
+        <hr />
+        <form asp-action="Edit" id="formulario" onsubmit="enviarformulario(event)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdReserva" />
+            <div class="row">
+                <div class="form-group col-4">
+                    <label asp-for="FechaEntrada" class="control-label"></label>
+                    <input asp-for="FechaEntrada" class="form-control" />
+                    <span asp-validation-for="FechaEntrada" class="text-danger"></span>
+                </div>
+                <div class="form-group col-4">
+                    <label asp-for="FechaSalida" class="control-label"></label>
+                    <input asp-for="FechaSalida" class="form-control" />
+                    <span asp-validation-for="FechaSalida" class="text-danger"></span>
+                </div>
+                <div class="form-group col-4">
+                    <label asp-for="IdCliente" class="control-label"></label>
+                    <select asp-for="IdCliente" class="form-control" asp-items="ViewBag.IdCliente"></select>
+                    <span asp-validation-for="IdCliente" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-4">
+                    <label asp-for="NombreCompleto" class="control-label">Nombre Completo *</label>
+                    <input asp-for="NombreCompleto" class="form-control" />
+                    <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-4">
+                    <label asp-for="IdEstadoReserva" class="control-label"></label>
+                    <select asp-for="IdEstadoReserva" class="form-control" asp-items="ViewBag.IdEstadoReserva"></select>
+                    <span asp-validation-for="IdEstadoReserva" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-4">
+                    <label asp-for="IdHabitacion" class="control-label"></label>
+                    <input asp-for="IdHabitacion" class="form-control">
+                    <span asp-validation-for="IdHabitacion" class="text-danger"></span>
+                </div>
+                <div class="form-group col-4">
+                    <label asp-for="IdCategoria" class="control-label"></label>
+                    <input asp-for="IdCategoria" class="form-control">
+                    <span asp-validation-for="IdCategoria" class="text-danger"></span>
+                </div>
+               
+            </div>
+
+           @*  <div class="form-group">
+                <label>Servicios Asociados:</label><br />
+                @foreach (var servicio in ViewBag.Servicios)
+                {
+                    <div>
+                        <input type="checkbox" name="serviciosSeleccionados" value="@servicio.IdServicio"
+                        @(Model.DetallesReservaServicios.Any(d => d.IdServicio == servicio.IdServicio) ? "checked" : "") />
+                        <label>@servicio.Nombre</label>
+                    </div>
+                }
+            </div> *@
+
+
+            <div class="form-group text-right m-b-0">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function enviarformulario(event) {
+            event.preventDefault();
+
+            const inputs = document.querySelectorAll('input, textarea, select'); // Selecciona los inputs
+            let valid = true; // Inicializa la variable valid
+
+            if (valid) {
+                swal.fire({
+                    title: '¿Estás seguro que quieres guardar los cambios?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    allowOutsideClick: false,
+                    confirmButtonText: 'si'
+                }).then((resultado) => {
+                    if (resultado.isConfirmed) {
+                        const formulario = document.getElementById('formulario');
+                        formulario.submit();
+                    }
+                });
+            }
+
+        }
+    </script>
+}

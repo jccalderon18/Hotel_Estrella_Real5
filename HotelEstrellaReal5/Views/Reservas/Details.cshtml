@@ -1,0 +1,113 @@
+﻿@model HotelEstrellaReal5.Models.Reserva
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-6">
+    <div class="card-box">
+        <h4 class="header-title m-b-30 text-center">Detalles Reserva</h4>
+        <hr />
+        <address>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.FechaEntrada)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.FechaEntrada)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.FechaSalida)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.FechaSalida)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.NombreCompleto)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.NombreCompleto)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdClienteNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdClienteNavigation.IdCliente)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdCategoriaNavigation.Nombre)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdEstadoReservaNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdEstadoReservaNavigation.NombreEstado)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdHabitacionNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdHabitacionNavigation.Nombre)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.ComprobanteAdelanto)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.ComprobanteAdelanto)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.FechaRegistro)
+                </dd>
+            </dl>
+        </address>
+        <!-- Aquí es donde mostramos los servicios asociados -->
+        <hr />
+        <div class="row">
+            <div class="col-sm-6">
+                <h5>Servicios Asociados</h5>
+                @if (Model.DetallesReservaServicios != null && Model.DetallesReservaServicios.Any())
+                {
+                    <ul>
+                        @foreach (var detalleServicio in Model.DetallesReservaServicios)
+                        {
+                            <li>@detalleServicio.IdServicioNavigation.Nombre</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>No hay servicios asociados a esta reserva.</p>
+                }
+            </div>
+            <div class="col-sm-6">
+                <h5>Huespedes Asociados</h5>
+                @if (Model.DetallesReservaHuespeds != null && Model.DetallesReservaHuespeds.Any())
+                {
+                    <ul>
+                        @foreach (var detallehuespedes in Model.DetallesReservaHuespeds)
+                        {
+                            <li>@detallehuespedes.IdHuespedNavigation.NombreCompleto</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>No hay Huespedes asociados a esta reserva.</p>
+                }
+            </div>
+        </div>
+
+
+        <address class="text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdReserva" class="btn btn-success waves-effect waves-light m-l-5">Editar</a>
+            <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Salir</a>
+        </address>
+    </div>
+</div>

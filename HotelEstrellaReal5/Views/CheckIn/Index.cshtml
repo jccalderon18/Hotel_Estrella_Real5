@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HotelEstrellaReal5.Models.CheckIn>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdHabitacionNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdHuespedNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdReservaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHabitacionNavigation.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHuespedNavigation.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdReservaNavigation.NombreCompleto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCheckIn">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdCheckIn">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCheckIn">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

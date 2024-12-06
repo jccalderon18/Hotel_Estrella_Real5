@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="author" content="Coderthemes">
+
+    <link rel="shortcut icon" href="~/SideBar/Imagenes/favicon.ico">
+
+    <title>Hotel_Estrella_Real</title>
+
+    <!-- App css -->
+    <link href="~/SideBar/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/SideBar/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/SideBar/css/style.css" rel="stylesheet" type="text/css" />
+
+
+
+    <script src="~/SideBar/js/modernizr.min.js"></script>
+    <link href="~/css/tablas.css" rel="stylesheet" />
+
+</head>
+
+
+<body class="fixed-left">
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <a href="index.html" class="logo"><span>Estrella<span>Real</span></span><i class="mdi mdi-layers"></i></a>
+            </div>
+
+            <!-- Button mobile view to collapse sidebar menu -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+
+                    <!-- Page title -->
+                    <ul class="nav navbar-nav list-inline navbar-left">
+                        <li class="list-inline-item">
+                            <button class="button-menu-mobile open-left">
+                                <i class="mdi mdi-menu"></i>
+                            </button>
+                        </li>
+                        <li class="list-inline-item">
+                            <h4 class="page-title ">
+                                @if (User.Identity.IsAuthenticated && !string.IsNullOrEmpty(User.Identity.Name))
+                                {
+                                    <span>Bienvenido, @User.Identity.Name</span>
+                                }
+                                else
+                                {
+                                    <span>Bienvenido, Usuario</span> <!-- Esto es por si no hay un nombre de usuario en los claims -->
+                                }
+                            </h4>
+                        </li>
+                    </ul>
+
+                    <nav class="navbar-custom">
+
+                        <ul class="list-unstyled topbar-right-menu float-right mb-0">
+
+                            <li>
+                                <!-- Notification -->
+                                <div class="notification-box">
+                                    <ul class="list-inline mb-0">
+                                        <li>
+                                            <a href="javascript:void(0);" class="right-bar-toggle">
+                                                <i class="mdi mdi-bell-outline noti-icon"></i>
+                                            </a>
+                                            <div class="noti-dot">
+                                                <span class="dot"></span>
+                                                <span class="pulse"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End Notification bar -->
+                            </li>
+
+                            @* <li class="hide-phone">
+                            <form class="app-search">
+                            <input type="text" placeholder="Buscar..."
+                            class="form-control">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            </li> *@
+
+                        </ul>
+                    </nav>
+                </div><!-- end container -->
+            </div><!-- end navbar -->
+        </div>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+
+                <!-- User -->
+                <div class="user-box">
+                    <div class="user-img">
+                        <!-- Mostrar la imagen actual del usuario o la predeterminada si no tiene una foto personalizada -->
+                        <img src="@ViewData["UserProfilePicture"]"
+                             alt="user-img" title="Foto de perfil" class="rounded-circle img-thumbnail img-responsive">
+                        <div class="user-status offline"></div>
+                    </div>
+                    <h5>
+                        <a href="#">
+                            @if (User.Identity.IsAuthenticated && !string.IsNullOrEmpty(User.Identity.Name))
+                            {
+                                // Si el usuario está autenticado y tiene un nombre, mostrar el nombre
+                                @User.Identity.Name
+                            }
+
+                        </a>
+                    </h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="@Url.Action("Perfil", "Perfil")" class="text-primary" title="Editar Perfil">
+                                <i class="mdi mdi-settings mdi-24px"></i>
+                            </a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="@Url.Action("CerrarSesion", "Acceso")" class="text-danger" title="Cerrar Sesión">
+                                <i class="mdi mdi-power mdi-24px"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                        <li class="text-muted menu-title fs-6">Menu</li>
+                <!-- End User -->
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <ul>
+
+                        <li>
+                            <a href="@Url.Action("Paginappal", "Inicio")" class="waves-effect"><i class="bi bi-house-fill m-2"></i><span> Inicio </span></a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Dashboard", "Inicio")" class="waves-effect"><i class="bi bi-graph-up-arrow"></i><span> Dashboard </span></a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "Clientes")" class="waves-effect"><i class="fa-solid fa-users"></i><span> Clientes </span></a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "Habitaciones")" class="waves-effect"><i class="fa-solid fa-bed"></i><span> Habitaciones </span></a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "Reservas")" class="waves-effect"><i class="fa-regular fa-calendar"></i><span> Reservas </span></a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "Servicios")" class="waves-effect"><i class="fa-brands fa-shopify"></i><span> Servicios </span></a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "Huespedes")" class="waves-effect"><i class="fa-solid fa-user-tie"></i><span> Huespedes </span></a>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-view-list"></i> <span> Configuración </span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+
+                                <li><a href="@Url.Action("Index", "Roles")"><i class="bi bi-person-vcard"></i>  Roles</a></li>
+                                <li><a href="@Url.Action("Index", "Usuarios")"><i class="bi bi-people-fill"></i> Usuarios</a></li>
+                                <li><a href="@Url.Action("Index", "Comodidades")"><i class="fa-solid fa-crown"></i> Comodidades</a></li>
+                                <li><a href="@Url.Action("Index", "Permisos")"><i class="bi bi-door-open"></i> Permisos</a></li>
+                                <li><a href="@Url.Action("Index", "Categorias")"><i class="fa-solid fa-list"></i> Categorias</a></li>
+                                <li><a href="@Url.Action("Index", "EstadoHabitaciones")"><i class="fa-solid fa-bath"></i> Estado Habitaciónes</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="@Url.Action("Index", "Pagos")" class="waves-effect"><i class="fa-solid fa-dollar-sign"></i><span> Pagos </span></a>
+                        </li>
+
+
+                       @*  <li>
+                            <a href="@Url.Action("Calendario", "Reservas")" class="waves-effect"><i class="mdi mdi-calendar"></i><span> Calendario </span></a>
+                        </li> *@
+
+                        <li>
+                            <a href="@Url.Action("Index", "CheckIn")" class="waves-effect"><i class="mdi mdi-calendar"></i><span> Check-in </span></a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "EncuestaSatisfaccion")" class="waves-effect"><i class="mdi mdi-calendar"></i><span> Encuesta de Satisfacción </span></a>
+                        </li>
+
+                       @*  <li>
+                            <a href="inbox.html" class="waves-effect"><i class="mdi mdi-email"></i><span class="badge badge-purple pull-right">New</span><span> Mail </span></a>
+                        </li> *@
+
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+                </div> <!-- container -->
+                @RenderBody()
+            </div> <!-- content -->
+
+            <footer class="footer text-center">
+                2024 © Todos los derechos reservados.
+            </footer>
+
+        </div>
+
+
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <div class="side-bar right-bar">
+            <a href="javascript:void(0);" class="right-bar-toggle">
+                <i class="mdi mdi-close-circle-outline"></i>
+            </a>
+            <h4 class="">Notifications</h4>
+            <div class="notification-list nicescroll">
+                <ul class="list-group list-no-border user-list">
+                    <li class="list-group-item">
+                        <a href="#" class="user-list-item">
+                            <div class="avatar">
+                                <img src="~/SideBar/Imagenes/users/avatar-2.jpg" alt="">
+                            </div>
+                            <div class="user-desc">
+                                <span class="name">Michael Zenaty</span>
+                                <span class="desc">There are new settings available</span>
+                                <span class="time">2 hours ago</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="user-list-item">
+                            <div class="icon bg-info">
+                                <i class="mdi mdi-account"></i>
+                            </div>
+                            <div class="user-desc">
+                                <span class="name">New Signup</span>
+                                <span class="desc">There are new settings available</span>
+                                <span class="time">5 hours ago</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="user-list-item">
+                            <div class="icon bg-pink">
+                                <i class="mdi mdi-comment"></i>
+                            </div>
+                            <div class="user-desc">
+                                <span class="name">New Message received</span>
+                                <span class="desc">There are new settings available</span>
+                                <span class="time">1 day ago</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item active">
+                        <a href="#" class="user-list-item">
+                            <div class="avatar">
+                                <img src="~/SideBar/Imagenes/users/avatar-3.jpg" alt="">
+                            </div>
+                            <div class="user-desc">
+                                <span class="name">James Anderson</span>
+                                <span class="desc">There are new settings available</span>
+                                <span class="time">2 days ago</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item active">
+                        <a href="#" class="user-list-item">
+                            <div class="icon bg-warning">
+                                <i class="mdi mdi-settings"></i>
+                            </div>
+                            <div class="user-desc">
+                                <span class="name">Settings</span>
+                                <span class="desc">There are new settings available</span>
+                                <span class="time">1 day ago</span>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- /Right-bar -->
+
+    </div>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <script src="~/SideBar/js/jquery.min.js"></script>
+    <script src="~/SideBar/js/popper.min.js"></script>
+    <script src="~/SideBar/js/bootstrap.min.js"></script>
+    <script src="~/SideBar/js/detect.js"></script>
+    <script src="~/SideBar/js/fastclick.js"></script>
+    <script src="~/SideBar/js/jquery.blockUI.js"></script>
+    <script src="~/SideBar/js/waves.js"></script>
+    <script src="~/SideBar/js/jquery.nicescroll.js"></script>
+    <script src="~/SideBar/js/jquery.slimscroll.js"></script>
+    <script src="~/SideBar/js/jquery.scrollTo.min.js"></script>
+
+    <!-- App js -->
+    <script src="~/SideBar/js/jquery.core.js"></script>
+    <script src="~/SideBar/js/jquery.app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Required datatable js -->
+    <script src="~/SideBar/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/SideBar/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/SideBar/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/SideBar/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="~/SideBar/plugins/datatables/jszip.min.js"></script>
+    <script src="~/SideBar/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/SideBar/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/SideBar/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/SideBar/plugins/datatables/buttons.print.min.js"></script>
+
+    <!-- Key Tables -->
+    <script src="~/SideBar/plugins/datatables/dataTables.keyTable.min.js"></script>
+
+    <!-- Responsive examples -->
+    <script src="~/SideBar/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/SideBar/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+    <!-- Selection table -->
+    <script src="~/SideBar/plugins/datatables/dataTables.select.min.js"></script>
+
+    <!-- App js -->
+    @* <script src="~/SideBar/js/jquery.core.js"></script>
+    <script src="~/SideBar/js/jquery.app.js"></script> *@
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

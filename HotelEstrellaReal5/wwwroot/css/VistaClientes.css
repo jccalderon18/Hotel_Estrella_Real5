@@ -1,0 +1,183 @@
+﻿
+/* Estilo base */
+.habitacion1, .habitacion2, .habitacion3, .habitacion4 {
+    background: #ffffff;
+    width: 100%;
+    height: 520px;
+    margin: 40px 0;
+    position: relative;
+}
+
+.suitt, .habitacion-especial, .habitacion-familiar, .habitacion-sencilla {
+    list-style: none;
+    position: relative;
+    width: 100%;
+}
+
+.habitacion1 img, .habitacion2 img, .habitacion3 img, .habitacion4 img {
+    position: absolute;
+    width: 50%;
+    height: 300px;
+    margin: 185px 300px;
+    animation: fade 25s infinite;
+}
+
+/* Animación de desvanecimiento */
+
+.foto1:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.foto2:nth-child(2) {
+    animation-delay: 10s;
+}
+
+.foto3:nth-child(3) {
+    animation-delay: 20s;
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.habitacion1 h1, .habitacion2 h1, .habitacion3 h1, .habitacion4 h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(4, 40, 72);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+    text-align: center;
+    margin: 10px 0;
+}
+
+.habitacion1 h4, .habitacion2 h4, .habitacion3 h4, .habitacion4 h4 {
+    color: #818181;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.habitacion1 p, .habitacion2 p, .habitacion3 p, .habitacion4 p {
+    text-align: center;
+    color: #373737;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 19px;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.reserva-ahora, .reserva-ahora2, .reserva-ahora3, .reserva-ahora4 {
+    display: inline-block;
+    background: rgb(4, 40, 72);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 2px;
+    text-decoration: none;
+    margin-top: 250px;
+}
+
+    .reserva-ahora:hover, .reserva-ahora2:hover, .reserva-ahora3:hover, .reserva-ahora4:hover {
+        background: #ffffff
+    }
+
+.habitacion-linea {
+    border-top: 2px double #ffffff;
+    margin: 0 200px;
+}
+
+/* Media Queries para tablets y móviles */
+
+/* Para dispositivos de 1024px o menos (Tablets y pantallas más pequeñas) */
+@media (max-width: 1024px) {
+    .habitacion1 img, .habitacion2 img, .habitacion3 img, .habitacion4 img {
+        width: 80%; /* Hacer que las imágenes ocupen más espacio en pantallas más pequeñas */
+    }
+
+    .habitacion1 h1, .habitacion2 h1, .habitacion3 h1, .habitacion4 h1 {
+        font-size: 24px;
+    }
+
+    .habitacion1 h4, .habitacion2 h4, .habitacion3 h4, .habitacion4 h4 {
+        font-size: 18px;
+    }
+
+    .habitacion1 p, .habitacion2 p, .habitacion3 p, .habitacion4 p {
+        font-size: 16px;
+        margin: 10px 20px;
+    }
+
+    .reserva-ahora, .reserva-ahora2, .reserva-ahora3, .reserva-ahora4 {
+        font-size: 18px;
+        padding: 8px 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Para dispositivos de 768px o menos (Tablets en modo vertical y móviles) */
+@media (max-width: 768px) {
+    .habitacion1 img, .habitacion2 img, .habitacion3 img, .habitacion4 img {
+        width: 90%; /* Ajustar imágenes aún más para pantallas más pequeñas */
+    }
+
+    .habitacion1 h1, .habitacion2 h1, .habitacion3 h1, .habitacion4 h1 {
+        font-size: 22px;
+    }
+
+    .habitacion1 h4, .habitacion2 h4, .habitacion3 h4, .habitacion4 h4 {
+        font-size: 16px;
+    }
+
+    .habitacion1 p, .habitacion2 p, .habitacion3 p, .habitacion4 p {
+        font-size: 14px;
+        margin: 10px 10px;
+    }
+
+    .reserva-ahora, .reserva-ahora2, .reserva-ahora3, .reserva-ahora4 {
+        font-size: 16px;
+        padding: 8px 20px;
+        margin-top: 20px;
+    }
+}
+
+/* Para dispositivos de 480px o menos (Móviles) */
+@media (max-width: 480px) {
+    .habitacion1 img, .habitacion2 img, .habitacion3 img, .habitacion4 img {
+        width: 100%; /* Imágenes en tamaño completo para móviles */
+        margin: 25px 0;
+    }
+
+    .habitacion1 h1, .habitacion2 h1, .habitacion3 h1, .habitacion4 h1 {
+        font-size: 20px;
+    }
+
+    .habitacion1 h4, .habitacion2 h4, .habitacion3 h4, .habitacion4 h4 {
+        font-size: 14px;
+    }
+
+    .habitacion1 p, .habitacion2 p, .habitacion3 p, .habitacion4 p {
+        font-size: 12px;
+        margin: 10px 10px;
+    }
+
+    .reserva-ahora, .reserva-ahora2, .reserva-ahora3, .reserva-ahora4 {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,70 @@
+﻿@model HotelEstrellaReal5.Models.EncuestaSatisfaccion
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>EncuestaSatisfaccion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdEncuesta" />
+            <div class="form-group">
+                <label asp-for="IdReserva" class="control-label"></label>
+                <select asp-for="IdReserva" class="form-control" asp-items="ViewBag.IdReserva"></select>
+                <span asp-validation-for="IdReserva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalificacionLimpieza" class="control-label"></label>
+                <input asp-for="CalificacionLimpieza" class="form-control" />
+                <span asp-validation-for="CalificacionLimpieza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalificacionServicios" class="control-label"></label>
+                <input asp-for="CalificacionServicios" class="form-control" />
+                <span asp-validation-for="CalificacionServicios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalificacionComida" class="control-label"></label>
+                <input asp-for="CalificacionComida" class="form-control" />
+                <span asp-validation-for="CalificacionComida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalificacionHabitacion" class="control-label"></label>
+                <input asp-for="CalificacionHabitacion" class="form-control" />
+                <span asp-validation-for="CalificacionHabitacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalificacionAtencion" class="control-label"></label>
+                <input asp-for="CalificacionAtencion" class="form-control" />
+                <span asp-validation-for="CalificacionAtencion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CalificacionInstalaciones" class="control-label"></label>
+                <input asp-for="CalificacionInstalaciones" class="form-control" />
+                <span asp-validation-for="CalificacionInstalaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaRegistro" class="control-label"></label>
+                <input asp-for="FechaRegistro" class="form-control" />
+                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

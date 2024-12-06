@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Mi Perfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+<link href="~/css/tablas.css" rel="stylesheet" />
+
+<h2 class="text-center">Mi Perfil</h2>
+
+<!-- Mostrar la imagen de perfil del usuario -->
+<div class="user-img text-center">
+    <!-- Mostrar la imagen actual del usuario o la predeterminada si no tiene una foto personalizada -->
+    <img src="@ViewData["UserProfilePicture"]"
+         alt="user-img" title="Perfil" class="rounded-circle img-thumbnail img-responsive">
+    <div class="user-status offline"></div>
+</div>
+
+<!-- Formulario para subir una nueva foto de perfil -->
+<form asp-controller="Perfil" asp-action="SubirFoto" method="post" enctype="multipart/form-data" class="text-center">
+    <div class="form-group">
+        <label for="fotoPerfil">Sube una nueva foto de perfil</label>
+        <input type="file" name="fotoPerfil" class="form-control" accept="image/*" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Subir Foto</button>
+</form>
+
+<!-- Mostrar mensajes de éxito o error -->
+ @if (TempData["Success"] != null)
+{
+    <div class="alert alert-success mt-3">
+        @TempData["Success"]
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @TempData["Error"]
+    </div>
+}
+
+
+@* <!-- Formulario para cambiar la contraseña -->
+<h3>Cambiar Contraseña</h3>
+<form id="change-password-form" asp-controller="Perfil" asp-action="CambiarContrasena" method="post">
+    <div class="form-group">
+        <label for="currentPassword">Contraseña actual</label>
+        <input type="password" id="currentPassword" name="currentPassword" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="newPassword">Nueva Contraseña</label>
+        <input type="password" id="newPassword" name="newPassword" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="confirmPassword">Confirmar Nueva Contraseña</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Cambiar Contraseña</button>
+</form>
+ *@
+<!-- Agregar algunos datos adicionales al perfil -->
+<div class="additional-details mt-4">
+    <h3 class="text-center">Detalles Adicionales</h3>
+    <p><strong>Nombre:</strong> @User.Identity?.Name</p>
+    <p><strong>Ultima Conexión:</strong> @DateTime.Now</p> <!-- Aquí puedes mostrar la fecha de la última conexión si la tienes disponible -->
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el valor de ViewData["Mensaje"] y asignarlo a una variable de JavaScript
+            var mensaje = '@Html.Raw(TempData["Success"] ?? "")';
+
+            // Verificar si el mensaje es igual a "Usuario Registrado"
+            if (mensaje === "Tu foto de perfil fue actualizado con éxito.") {
+                // Mostrar la notificación con SweetAlert2
+                Swal.fire({
+                    title: mensaje,      // El mensaje que se muestra en la alerta
+                    icon: 'success',     // Icono de éxito
+                    timer: 3000,         // Duración de la alerta (3000 milisegundos)
+                    timerProgressBar: true, // Barra de progreso durante el tiempo de la alerta
+                    position: 'center',   // Posición de la alerta (esquina superior derecha)
+                    width: '22%',            // Ancho de la alerta
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el valor de ViewData["Mensaje"] y asignarlo a una variable de JavaScript
+            var mensaje = '@Html.Raw(TempData["Error"] ?? "")';
+
+            // Verificar si el mensaje es igual a "Usuario Registrado"
+            if (mensaje === "mensaje") {
+                // Mostrar la notificación con SweetAlert2
+                Swal.fire({
+                    title: mensaje,      // El mensaje que se muestra en la alerta
+                    icon: 'error',     // Icono de éxito
+                    timer: 3000,         // Duración de la alerta (3000 milisegundos)
+                    timerProgressBar: true, // Barra de progreso durante el tiempo de la alerta
+                    position: 'center',   // Posición de la alerta (esquina superior derecha)
+                    width: '22%',            // Ancho de la alerta
+                });
+            }
+        });
+    </script>
+
+    <!-- Agregar la validación de contraseñas con JavaScript -->
+    <script>
+        document.getElementById("change-password-form").addEventListener("submit", function (event) {
+            var newPassword = document.getElementById("newPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Verificar que las contraseñas coincidan
+            if (newPassword !== confirmPassword) {
+                alert("Las contraseñas no coinciden.");
+                event.preventDefault();  // Evitar el envío del formulario
+            } else {
+                // Aquí podrías agregar validaciones adicionales si lo deseas, por ejemplo, comprobar la longitud o fuerza de la contraseña.
+            }
+        });
+    </script>
+}

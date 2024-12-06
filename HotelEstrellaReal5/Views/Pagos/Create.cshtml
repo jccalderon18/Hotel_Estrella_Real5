@@ -1,0 +1,176 @@
+﻿@model HotelEstrellaReal5.Models.Pago
+
+@{
+    ViewData["Title"] = "Crear Pago";
+}
+
+
+<div class="col-xl-11">
+    <div class="card-box">
+
+        <div class="text-center">
+            <h2>Detalles de la Reserva</h2><hr />
+        </div>
+
+        <form asp-action="Create" id="formPago">
+            <div id="datosReserva" class="row">
+                <div class="form-group col-sm-4">
+                    <label for="IdReserva">Numero Reserva</label>
+                    <select id="IdReserva" name="IdReserva" class="form-control">
+                        <option value="">Seleccione una reserva</option>
+                        @foreach (var item in ViewData["IdReserva"] as SelectList)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <!-- Aquí se mostrarán los datos de la reserva -->
+                <div class=" form-group col-sm-4">
+                    <label for="nombreCliente" class="control-label">Nombre Cliente</label>
+                    <span id="nombreCliente" class="form-control"></span>
+                </div>
+
+                <div class=" form-group col-sm-4">
+                    <label for="identificacionCliente" class="control-label">Identificación Cliente</label>
+                    <span id="identificacionCliente" class="form-control"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="nombreHabitacion" class="control-label">Habitación Reservada</label>
+                    <span id="nombreHabitacion" class="form-control"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="fechaEntrada" class="control-label">Fecha Entrada</label>
+                    <span id="fechaEntrada" class="form-control"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="fechaSalida" class="control-label">Fecha Salida</label>
+                    <span id="fechaSalida" class="form-control"></span>
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <label for="servicios" class="control-label">Servicios Adicionales</label>
+                <ul id="servicios" class="list-group">
+                    <!-- Los servicios se agregarán aquí mediante JavaScript -->
+                </ul>
+            </div>
+
+            <div class="text-center">
+                <hr /><h2>Detalles del Pago</h2><hr /><br />
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-3">
+                    <label for="precioPorNoche" class="control-label">Precio por Noche</label>
+                    <span id="precioPorNoche" class="form-control"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="PrecioInicial" class="control-label">Precio Inicial</label>
+                    <input asp-for="PrecioInicial" id="precioInicial" class="form-control" disabled />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="Adelanto" class="control-label">Adelanto</label>
+                    <input asp-for="Adelanto" id="adelanto" class="form-control" disabled />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="PrecioRestante" class="control-label">Precio Restante</label>
+                    <input asp-for="PrecioRestante" id="precioRestante" class="form-control" disabled />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="CostoPenalidad" class="control-label">Costo de Penalidad</label>
+                    <input asp-for="CostoPenalidad" id="costoPenalidad" class="form-control" disabled />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label asp-for="SubTotal" class="control-label">Subtotal</label>
+                    <input asp-for="SubTotal" id="subtotal" class="form-control" disabled />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="iva" class="control-label">IVA</label>
+                    <span id="iva" class="form-control"></span>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="total" class="control-label">Total</label>
+                    <input asp-for="Total" id="total" class="form-control" disabled />
+                </div>
+            </div>
+
+            <div class="form-group col-sm-3">
+                <label asp-for="MedioPago">Medio de Pago</label>
+                <select asp-for="MedioPago" class="form-control" asp-items="@(ViewData["MedioPago"]as SelectList)">
+                    <option value="">Seleccione un medio de pago</option>
+                    <option value="Nequi">Nequi</option>
+                    <option value="PSE">PSE</option>
+                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                    <option value="Tarjeta Débito">Tarjeta Débito</option>
+                    <option value="Efectivo">Efectivo</option>
+                </select>
+            </div>
+
+
+
+            <div class="form-group text-right m-b-0">
+                <a href="@Url.Action("Create" , "EncuestaSatisfaccion")" class="btn btn-success waves-effect waves-light">Realizar Encuesta</a>
+               <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Detectar cuando cambia el IdReserva
+            $("#IdReserva").change(function () {
+                var idReserva = $(this).val();
+
+                // Si no se selecciona ninguna reserva, no hacer nada
+                if (idReserva == "") {
+                    $("#datosReserva").hide();
+                    return;
+                }
+
+                // Hacer una llamada AJAX para obtener los datos de la reserva
+                $.ajax({
+                    url: '@Url.Action("CalcularPrecios", "Pagos")',
+                    type: 'POST',
+                    data: { idReserva: idReserva },
+                    success: function (data) {
+                        if (data.success) {
+                            // Mostrar los datos obtenidos en la vista
+                            $("#datosReserva").show();
+                            $("#nombreCliente").text(data.nombreCliente);
+                            $("#identificacionCliente").text(data.identificacionCliente);
+                            $("#nombreHabitacion").text(data.nombreHabitacion);
+                            $("#fechaEntrada").text(data.fechaEntrada);
+                            $("#fechaSalida").text(data.fechaSalida);
+                            $("#precioPorNoche").text(data.precioPorNoche);
+                            $("#precioInicial").val(data.precioInicial);
+                            $("#adelanto").val(data.adelanto); // Revisa si "adelanto" viene en el JSON
+                            $("#precioRestante").val(data.precioRestante);
+                            $("#costoPenalidad").val(data.costoPenalidad);
+                            $("#subtotal").val(data.subtotal);
+                            $("#iva").text(data.iva);
+                            $("#total").val(data.total);
+
+                            // Aquí agregamos los servicios adicionales
+                            var serviciosList = $("#servicios");
+                            serviciosList.empty(); // Limpiar la lista previa de servicios
+                            $.each(data.Servicios, function (index, servicio) {
+                                var servicioItem = `<li class="list-group-item">${servicio.Nombre} - $${servicio.Valor}</li>`;
+                                serviciosList.append(servicioItem);  // Agregar el servicio a la lista
+                            });
+                        } else {
+                            alert(data.message);  // Mostrar el mensaje de error si no se pudo obtener los datos
+                        }
+                    },
+                    error: function () {
+                        alert('Hubo un error al obtener los datos de la reserva.');
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,70 @@
+﻿
+.botoncrear {
+    background-color: navy;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.botoncrear:hover {
+    background-color: midnightblue;
+    color: white;
+}
+
+.botoneditar {
+    background-color: forestgreen;
+    color: white;
+    text-decoration: none;
+}
+
+.botoneditar:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.botondetalle {
+    background-color: #354fdf;
+    color: white;
+    text-decoration: none;
+}
+
+.botondetalle:hover {
+    background-color: #1b33d6;
+    color: white;
+}
+
+.botoneliminar {
+    background-color: #da2626;
+    color: white;
+    text-decoration: none;
+}
+
+.botoneliminar:hover {
+    background-color: #c60909;
+    color: white;
+}
+
+/*.botonexcel {
+    background-color: forestgreen !important;
+    color: white !important;
+    position: relative !important;
+   
+    border-radius: 10px !important;
+}
+
+.botonpdf {
+    background-color: darkred !important;
+    color: white !important;
+    position: relative !important;
+    top: -150px !important;
+    left: 1050px !important;
+    border-radius: 10px !important;
+}*/
+
+.user-img img {
+    width: 100px;  /* Ancho estándar */
+    height: 90px; /* Alto estándar */
+    object-fit: cover;  /* Hace que la imagen se recorte para llenar el área sin distorsionarse */
+    object-position: center;  /* Centra la imagen si es más grande que el contenedor */
+}
+

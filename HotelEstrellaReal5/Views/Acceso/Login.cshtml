@@ -1,0 +1,92 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <!-- Bootstrap 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Custom styles -->
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Iniciar Sesión</h3>
+                </div>
+                <div class="card-body">
+                    <form action="@Url.Action("Login","Acceso")" method="post">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="text" name="Email" class="form-control" placeholder="Ingrese un Correo" required>
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" name="Clave" class="form-control" placeholder="Ingese una Contraseña" required>
+                        </div>
+
+                        @if (ViewData["Mensaje"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewData["Mensaje"]
+                            </div>
+                        }
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        No tengo una cuenta	?<a href="@Url.Action("Registrarse","Acceso")">Registrarse</a>
+                    </div>
+                    <br />
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Olvide mi Contraseña?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 4 JS and jQuery -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+    <!-- Script para mostrar la alerta -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el valor de TempData["Mensaje"] y asignarlo a una variable de JavaScript
+            var mensaje = '@Html.Raw(ViewData["Mensaje"] ?? "")';
+
+            // Verificar si el mensaje contiene el texto "Usuario Registrado"
+            if (mensaje === "Usuario Registrado") {
+                // Mostrar la notificación con SweetAlert2
+                Swal.fire({
+                    title: mensaje,        // El mensaje que se muestra en la alerta
+                    icon: 'success',       // Icono de éxito
+                    timer: 3000,           // Duración de la alerta (3000 milisegundos)
+                    timerProgressBar: true, // Barra de progreso durante el tiempo de la alerta
+                    position: 'center',   // Posición de la alerta (esquina superior derecha)
+                    width: '22%'            // Ancho de la alerta
+                });
+            }
+        });
+    </script>
+</body>
+</html>

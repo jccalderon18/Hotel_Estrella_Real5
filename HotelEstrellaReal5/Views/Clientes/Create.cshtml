@@ -1,0 +1,70 @@
+﻿@model HotelEstrellaReal5.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-xl-11">
+    <div class="card-box">
+
+        <h4 class="header-title m-t-0 m-b-30 text-center">Crear Cliente</h4>
+        <hr />
+        <form asp-action="Create" id="formulario" onsubmit="enviarformulario(event)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="IdCliente" class="control-label">Identificación *</label>
+                    <input type="number" asp-for="IdCliente" class="form-control" placeholder="Documento de Identidad" />
+                    <span asp-validation-for="IdCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="NombreCompleto" class="control-label">Nombre *</label>
+                    <input type="text" asp-for="NombreCompleto" class="form-control" placeholder="Ingrese su Nombre" />
+                    <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="Telefono" class="control-label">Teléfono *</label>
+                    <input type="tel" asp-for="Telefono" class="form-control" placeholder="Numero Celular" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="Email" class="control-label">Fecha de Nacimiento *</label>
+                    <input type="email" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label asp-for="FechaNacimiento" class="control-label">Fecha de Nacimiento *</label>
+                    <input type="date" asp-for="FechaNacimiento" class="form-control" />
+                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-6">
+                    <label asp-for="IdEstado" class="control-label">Estado *</label>
+                    <select asp-for="IdEstado" class="form-control" asp-items="ViewBag.IdEstado"></select>
+                    <span asp-validation-for="IdEstado" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group text-right m-b-0">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5"> Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

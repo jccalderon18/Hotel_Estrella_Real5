@@ -1,0 +1,53 @@
+﻿
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px 10px 0;
+    padding: 20px;
+    background-color: rgb(255, 255, 255,0.6);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 20px 40px 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.chart-box {
+    flex: 1;
+    margin: 10px;
+    min-width: 300px; /* Ancho mínimo para la responsividad */
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important; /* Altura ajustada para las gráficas */
+}
+
+form {
+    margin-top: 20px;
+}
+
+#reportOutput {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+}

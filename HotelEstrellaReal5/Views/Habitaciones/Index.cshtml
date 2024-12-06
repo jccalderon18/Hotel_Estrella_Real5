@@ -1,0 +1,193 @@
+﻿@model IEnumerable<HotelEstrellaReal5.Models.Habitacione>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habitaciones</title>
+    <!-- DataTables -->
+    <link href="~/SideBar/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/SideBar/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="~/SideBar/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Multi Item Selection examples -->
+    <link href="~/SideBar/plugins/datatables/select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-11">
+            <div class="card-box table-responsive">
+                <h1 class="text-center">Gestión de habitaciones</h1>
+
+                <p>
+                    <a class="botoncrear btn" asp-action="Create"><i class="fa-solid fa-plus"></i> Crear habitación</a>
+                </p>
+
+                <table id="datatable-buttons" class="table table-dark table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th class="border-white col-sm-1">
+                                @Html.DisplayNameFor(model => model.Nombre)
+                            </th>
+                            <th class="border-white col-sm-2">
+                                @Html.DisplayNameFor(model => model.Precio)
+                            </th>
+                            <th class="border-white col-sm-4">
+                                @Html.DisplayNameFor(model => model.Descripcion)
+                            </th>
+                            <th class="border-white col-sm-1">
+                                @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
+                            </th>
+                            <th class="border-white col-sm-2">
+                                @Html.DisplayNameFor(model => model.IdEstadoHabitacionNavigation)
+                            </th>
+                            <th class="border-white col-sm-2">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="border-white">
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
+                                <td class="border-white">
+                                    @String.Format(new System.Globalization.CultureInfo("es-CO"), "{0:C0}", item.Precio)
+                                </td>
+                                <td class="border-white">
+                                    @Html.DisplayFor(modelItem => item.Descripcion)
+                                </td>
+                                <td class="border-white">
+                                    @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Nombre)
+                                </td>
+                                <td class="border-white">
+                                    @Html.DisplayFor(modelItem => item.IdEstadoHabitacionNavigation.NombreEstadoHabitacion)
+                                </td>
+                                <td class="border-white">
+                                    <a class="botoneditar  btn-sm" title="Editar" asp-action="Edit" asp-route-id="@item.IdHabitacion"><i class="bi bi-pencil-square"></i></a> |
+                                    <a class="botondetalle  btn-sm" title="Detalles" asp-action="Details" asp-route-id="@item.IdHabitacion"><i class="bi bi-eye"></i></a> |
+                                    <a class="botoneliminar btn-sm" title="Eliminar" asp-action="Delete" asp-route-id="@item.IdHabitacion"><i class="bi bi-trash3"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mostrar notificación de éxito si TempData["ResultOk"] existe
+            var resultOk = '@Html.Raw(TempData["ResultOk"] ?? "")';
+            if (resultOk) {
+                Swal.fire({
+                    title: resultOk,
+                    icon: 'success',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    position: 'center',
+                    width: '22%',
+
+
+
+
+                });
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Configuración para DataTable con idioma en Español (Colombia)
+            var languageSettings = {
+                "sEmptyTable": "No hay datos disponibles en la tabla",
+                "sInfo": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
+                "sInfoFiltered": "(filtrado de _MAX_ entradas en total)",
+                "sLengthMenu": "Mostrar _MENU_ entradas",
+                "sLoadingRecords": "Cargando...",
+                "sProcessing": "Procesando...",
+                "sSearch": "Buscar:",
+                "sZeroRecords": "No se han encontrado resultados",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": activar para ordenar la columna de manera descendente"
+                }
+            };
+
+            // Default Datatable
+            $('#datatable').DataTable({
+                language: languageSettings  // Añadimos la configuración de idioma aquí
+            });
+
+            // Buttons examples
+            var table = $('#datatable-buttons').DataTable({
+                lengthChange: false,
+                buttons: [
+                    {
+                        extend: 'excel',
+                        text: '<i class="bi bi-filetype-exe"></i>',
+                        className: 'botonexcel btn',
+                        titleAttr: 'exportar excel'
+                    },
+                    {
+                        extend: 'pdf',
+                        text: '<i class="bi bi-filetype-pdf"></i>',
+                        className: 'botonpdf btn',
+                        titleAttr: 'exportar pdf'
+                    }
+                ],
+                scrollX: true,
+                language: languageSettings,  // Añadimos la configuración de idioma aquí también
+                initcomplete: function (json, settings) {
+                    // Eliminar la clase de los estilos por defecto de DataTables
+                    $(".dt-buttons").removeClass("dt-buttons");
+                    // Agregar clase para añadir estilos personalizados
+                    $(".dt-button").addClass("botones");
+                }
+            });
+
+            // Key Tables
+            $('#key-table').DataTable({
+                keys: true,
+                language: languageSettings  // Configurar idioma también aquí
+            });
+
+            // Responsive Datatable
+            $('#responsive-datatable').DataTable({
+                language: languageSettings  // Configurar idioma también aquí
+            });
+
+            // Multi Selection Datatable
+            $('#selection-datatable').DataTable({
+                select: {
+                    style: 'multi'
+                },
+                language: languageSettings  // Configurar idioma también aquí
+            });
+
+            // Mover los botones de exportación al contenedor adecuado
+            table.buttons().container()
+                .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+}

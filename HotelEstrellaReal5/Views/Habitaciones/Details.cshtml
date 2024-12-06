@@ -1,0 +1,63 @@
+﻿@model HotelEstrellaReal5.Models.Habitacione
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-6">
+    <div class="card-box">
+
+        <h4 class="header-title m-b-30 text-center">Detalles habitación</h4>
+        <hr />
+        <address>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdHabitacion)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdHabitacion)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
+                <dd class="col-sm-8">
+                    <!-- Formatear el Precio en pesos colombianos sin decimales -->
+                    @Model.Precio?.ToString("C0", new System.Globalization.CultureInfo("es-CO"))
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdCategoriaNavigation.Nombre)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdEstadoHabitacionNavigation)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdEstadoHabitacionNavigation.NombreEstadoHabitacion)
+                </dd>
+            </dl>
+        </address>
+
+        <address class="text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdHabitacion" class="btn btn-success waves-effect waves-light m-l-5">Editar</a>
+            <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Salir</a>
+        </address>
+
+
+    </div>
+</div>

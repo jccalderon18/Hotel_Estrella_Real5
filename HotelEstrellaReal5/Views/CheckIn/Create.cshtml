@@ -1,0 +1,138 @@
+﻿@model HotelEstrellaReal5.Models.CheckIn
+
+<div class="container">
+    <h2>Crear Check-in</h2>
+
+    <form id="formCheckIn">
+        <!-- Selección de la reserva -->
+        <div class="form-group">
+            <label for="IdReserva">Seleccionar Reserva</label>
+            <select id="IdReserva" class="form-control" required>
+                <option value="">Seleccione una Reserva</option>
+                @if (ViewBag.Reservas != null)
+                {
+                    foreach (var reserva in ViewBag.Reservas as List<SelectListItem>)
+                    {
+                        <option value="@reserva.Value">@reserva.Text</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <!-- Detalles de la reserva -->
+        <div class="form-group">
+            <label for="FechaEntrada">Fecha de Entrada</label>
+            <input type="text" id="FechaEntrada" name="FechaEntrada" class="form-control" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="FechaSalida">Fecha de Salida</label>
+            <input type="text" id="FechaSalida" name="FechaSalida" class="form-control" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="NumeroHabitacion">Número de Habitación</label>
+            <input type="text" id="NumeroHabitacion" name="NumeroHabitacion" class="form-control" readonly />
+        </div>
+
+        <!-- Lista de huéspedes -->
+        <div class="form-group">
+            <label>Huéspedes Asociados</label>
+            <ul id="ListaHuespedes" class="list-group"></ul>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrar Check-in</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Manejar el cambio de la reserva seleccionada
+            const reservaSelect = document.getElementById('IdReserva');
+            const fechaEntradaInput = document.getElementById('FechaEntrada');
+            const fechaSalidaInput = document.getElementById('FechaSalida');
+            const numeroHabitacionInput = document.getElementById('NumeroHabitacion');
+            const listaHuespedes = document.getElementById('ListaHuespedes');
+
+            reservaSelect.addEventListener('change', function () {
+                const reservaId = this.value;
+
+                if (reservaId) {
+                    fetch(`/CheckIn/GetReservaDetails?reservaId=${reservaId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data && !data.Error) {
+                                // Mostrar los datos de la reserva
+                                fechaEntradaInput.value = data.fechaEntrada || '';
+                                fechaSalidaInput.value = data.fechaSalida || '';
+                                numeroHabitacionInput.value = data.numeroHabitacion || '';
+
+                                // Mostrar los huéspedes asociados
+                                listaHuespedes.innerHTML = ''; // Limpiar la lista previa
+                                if (data.Huespedes && data.Huespedes.length > 0) {
+                                    data.Huespedes.forEach(huesped => {
+                                        const li = document.createElement('li');
+                                        li.classList.add('list-group-item');
+                                        li.textContent = `${huesped.NombreCompleto} - ${huesped.Identificacion} - ${huesped.Email}`;
+                                        listaHuespedes.appendChild(li);
+                                    });
+                                } else {
+                                    listaHuespedes.innerHTML = '<li class="list-group-item">Sin huéspedes asociados</li>';
+                                }
+                            } else {
+                                alert(data.Error || "Ocurrió un error al obtener los detalles de la reserva.");
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error al obtener los detalles de la reserva:", error);
+                            alert("Error al cargar los datos de la reserva.");
+                        });
+                } else {
+                    // Limpiar los campos si no se selecciona ninguna reserva
+                    fechaEntradaInput.value = '';
+                    fechaSalidaInput.value = '';
+                    numeroHabitacionInput.value = '';
+                    listaHuespedes.innerHTML = '';
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('formCheckIn').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const checkInData = {
+                IdReserva: document.getElementById('IdReserva').value,
+                FechaEntrada: document.getElementById('FechaEntrada').value,
+                FechaSalida: document.getElementById('FechaSalida').value,
+                NumeroHabitacion: document.getElementById('NumeroHabitacion').value
+            };
+
+            fetch('/CheckIn/Create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(checkInData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Check-in registrado exitosamente.');
+                        location.href = '/CheckIn/Index';
+                    } else {
+                        alert('Error al guardar el check-in: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al registrar el check-in:', error);
+                    alert('Ocurrió un error al registrar el check-in.');
+                });
+        });
+
+    </script>
+}
+
+

@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "ServiciosClientes";
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml";
+}
+
+<link href="~/css/serviciosclientes.css" rel="stylesheet" />
+
+
+<section>
+
+
+    <div class="carruselspa">
+        <div class="imagenesspa">
+            <img class="fade" src="~/Imagenes/spa9.jpg" alt="" />
+            <img class="fade" src="~/Imagenes/spa8.jpeg" alt="">
+            <img class="fade" src="~/Imagenes/Spa7.jpg" alt="" />
+        </div>
+    </div>
+
+    <div class="centrospa">
+        <h1 class="spatitulo">Centro de Spa</h1>
+        <hr class="spalinea">
+        <p class="spadescripcion">Disfruta de un día de relajación en nuestro centro de spa, donde podrás disfrutar de masajes, tratamientos faciales y corporales, sauna, jacuzzi y mucho más.</p>
+    </div>
+
+    <form id="form1" runat="server">
+        <div class="gallery">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="~/Imagenes/chocoterapia.jpg" alt="Spa Imagen 1" />
+                <h3 class="gallery-title">Chocoterapia</h3>
+
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="~/Imagenes/Spa1.jpg" alt="Spa Imagen 2" />
+                <h3 class="gallery-title">Hidroterapia</h3>
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="~/Imagenes/Spa5.jpg" alt="Spa Imagen 3" />
+                <h3 class="gallery-title">Termoterapia</h3>
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="~/Imagenes/Spa3.jpg" alt="Spa Imagen 4" />
+                <h3 class="gallery-title">Terapia Geotermal</h3>
+            </div>
+        </div>
+
+        <div id="modal" class="modal" onclick="closeModal()">
+            <span class="close" onclick="closeModal()">×</span>
+            <img class="modal-content" id="modal-image" />
+        </div>
+    </form>
+
+</section>
+
+
+
+
+<form id="formMain" runat="server">
+    <!-- Carrusel Principal -->
+    <div class="main-carousel">
+        <img src="~/Imagenes/Gimnasio.jpeg" alt="Imagen Principal del Spa" class="carousel-image" />
+    </div>
+
+    <!-- Galería de Imágenes -->
+    <div class="spa-gallery">
+        <div class="spa-item" onclick="showModal(this)">
+            <img src="~/Imagenes/Gimnasio2.jpg" alt="Spa Imagen 1" />
+        </div>
+        <div class="spa-item" onclick="showModal(this)">
+            <img src="~/Imagenes/Gimnasio3.jpg" alt="Spa Imagen 2" />
+        </div>
+        <div class="spa-item" onclick="showModal(this)">
+            <img src="~/Imagenes/Gimnasio4.jpg" alt="Spa Imagen 3" / />
+        </div>
+        <div class="spa-item" onclick="showModal(this)">
+            <img src="~/Imagenes/Gimnasio5.jpg" alt="Spa Imagen 4" />
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="image-modal" onclick="hideModal()">
+        <span class="modal-close" onclick="hideModal()">×</span>
+        <img class="modal-image" id="modalImg" />
+    </div>
+</form>
+
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        <script src="~/js/scriptpaginappal.js"></script>
+        <script src="~/js/scriptserviciosclientes.js"></script>
+
+    }
+}

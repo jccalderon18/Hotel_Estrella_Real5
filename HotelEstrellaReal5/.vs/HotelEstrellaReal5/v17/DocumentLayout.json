@@ -1,0 +1,596 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\shared\\_layoutclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\shared\\_layoutclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\clientes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\clientes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\pagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\pagos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\pagos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\encuestasatisfaccion\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\encuestasatisfaccion\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\checkincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\checkincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\huespedescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\huespedescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\encuestasatisfaccion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\encuestasatisfaccion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\models\\encuestasatisfaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:models\\encuestasatisfaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\pagos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\pagos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\reservas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\reservas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\reservas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\acceso\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\acceso\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\reservas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\permisoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\permisoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\perfilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\perfilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\reservas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\models\\reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:models\\reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\perfil\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\perfil\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\iniciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\iniciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\estadohabitaciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\estadohabitaciones\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\inicio\\serviciosclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\inicio\\serviciosclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\wwwroot\\css\\vistaclientes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:wwwroot\\css\\vistaclientes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\inicio\\habitacionesclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\inicio\\habitacionesclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\inicio\\paginappalclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\inicio\\paginappalclientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|c:\\proyectos c#\\2925210\\hotelestrellareal5\\views\\reservas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6156F1B6-B486-4902-A46C-B63349CE0241}|HotelEstrellaReal5.csproj|solutionrelative:views\\reservas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CheckInController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\CheckInController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CheckInController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\CheckInController.cs",
+              "RelativeToolTip": "Controllers\\CheckInController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T12:22:15.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HuespedesController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\HuespedesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HuespedesController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\HuespedesController.cs",
+              "RelativeToolTip": "Controllers\\HuespedesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T12:21:13.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\EncuestaSatisfaccion\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\EncuestaSatisfaccion\\Create.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\EncuestaSatisfaccion\\Create.cshtml",
+              "RelativeToolTip": "Views\\EncuestaSatisfaccion\\Create.cshtml",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAACsAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T12:12:13.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Pagos\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Pagos\\Create.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Pagos\\Create.cshtml",
+              "RelativeToolTip": "Views\\Pagos\\Create.cshtml",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAG8AAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T08:55:58.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PagosController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\PagosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PagosController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\PagosController.cs",
+              "RelativeToolTip": "Controllers\\PagosController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFUAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T08:57:37.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Clientes\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Clientes\\Index.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Clientes\\Index.cshtml",
+              "RelativeToolTip": "Views\\Clientes\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T09:33:11.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LayoutClientes.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Shared\\_LayoutClientes.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutClientes.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Shared\\_LayoutClientes.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutClientes.cshtml",
+              "ViewState": "AQIAAJIAAAAAAAAAAAAIwKYAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T08:00:24.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\EncuestaSatisfaccion\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\EncuestaSatisfaccion\\Index.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\EncuestaSatisfaccion\\Index.cshtml",
+              "RelativeToolTip": "Views\\EncuestaSatisfaccion\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T12:12:01.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EncuestaSatisfaccion.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Models\\EncuestaSatisfaccion.cs",
+              "RelativeDocumentMoniker": "Models\\EncuestaSatisfaccion.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Models\\EncuestaSatisfaccion.cs",
+              "RelativeToolTip": "Models\\EncuestaSatisfaccion.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAA9wDgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T12:05:24.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Pagos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Pagos\\Index.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Pagos\\Index.cshtml",
+              "RelativeToolTip": "Views\\Pagos\\Index.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEsAAAB3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T12:03:36.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Index.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Index.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T01:10:26.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Delete.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Delete.cshtml",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAAGQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T01:24:15.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Perfil.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Perfil\\Perfil.cshtml",
+              "RelativeDocumentMoniker": "Views\\Perfil\\Perfil.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Perfil\\Perfil.cshtml",
+              "RelativeToolTip": "Views\\Perfil\\Perfil.cshtml",
+              "ViewState": "AQIAADsAAAAAAAAAAAAAAG8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T21:04:47.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PerfilController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\PerfilController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PerfilController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\PerfilController.cs",
+              "RelativeToolTip": "Controllers\\PerfilController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAiwCMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T10:02:00.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Edit.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Edit.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T12:47:54.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Reserva.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Models\\Reserva.cs",
+              "RelativeDocumentMoniker": "Models\\Reserva.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Models\\Reserva.cs",
+              "RelativeToolTip": "Models\\Reserva.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAuwDUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T04:47:46.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Details.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Details.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Details.cshtml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T07:40:56.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Pago.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Models\\Pago.cs",
+              "RelativeDocumentMoniker": "Models\\Pago.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Models\\Pago.cs",
+              "RelativeToolTip": "Models\\Pago.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAIwEAAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T09:36:33.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Acceso\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Acceso\\Login.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Acceso\\Login.cshtml",
+              "RelativeToolTip": "Views\\Acceso\\Login.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACQAAACCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T11:00:18.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PermisosController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\PermisosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PermisosController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\PermisosController.cs",
+              "RelativeToolTip": "Controllers\\PermisosController.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T01:32:39.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReservasController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\ReservasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservasController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\ReservasController.cs",
+              "RelativeToolTip": "Controllers\\ReservasController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T04:25:56.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "InicioController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\InicioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InicioController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\InicioController.cs",
+              "RelativeToolTip": "Controllers\\InicioController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAlwC0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T08:07:23.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AccesoController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\AccesoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\AccesoController.cs",
+              "RelativeToolTip": "Controllers\\AccesoController.cs",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAIwI8AAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T14:25:39.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAG4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T07:47:53.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\EstadoHabitaciones\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\EstadoHabitaciones\\Create.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\EstadoHabitaciones\\Create.cshtml",
+              "RelativeToolTip": "Views\\EstadoHabitaciones\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T09:33:47.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Categorias\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categorias\\Index.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Categorias\\Index.cshtml",
+              "RelativeToolTip": "Views\\Categorias\\Index.cshtml",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T23:24:35.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "Controllers\\UsuariosController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAJ0AAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T12:26:07.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Usuarios\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Usuarios\\Edit.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Usuarios\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Usuarios\\Edit.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T12:25:38.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "Controllers\\ClientesController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwEUAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T12:51:15.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ServiciosClientes.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Inicio\\ServiciosClientes.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inicio\\ServiciosClientes.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Inicio\\ServiciosClientes.cshtml",
+              "RelativeToolTip": "Views\\Inicio\\ServiciosClientes.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T08:46:56.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "VistaClientes.css",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\wwwroot\\css\\VistaClientes.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\VistaClientes.css",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\wwwroot\\css\\VistaClientes.css",
+              "RelativeToolTip": "wwwroot\\css\\VistaClientes.css",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-05T08:41:25.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "HabitacionesClientes.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Inicio\\HabitacionesClientes.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inicio\\HabitacionesClientes.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Inicio\\HabitacionesClientes.cshtml",
+              "RelativeToolTip": "Views\\Inicio\\HabitacionesClientes.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T08:19:05.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PaginappalClientes.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Inicio\\PaginappalClientes.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inicio\\PaginappalClientes.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Inicio\\PaginappalClientes.cshtml",
+              "RelativeToolTip": "Views\\Inicio\\PaginappalClientes.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T08:15:30.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservas\\Create.cshtml",
+              "ToolTip": "C:\\proyectos C#\\2925210\\HotelEstrellaReal5\\Views\\Reservas\\Create.cshtml",
+              "RelativeToolTip": "Views\\Reservas\\Create.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEEAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T20:40:46.532Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

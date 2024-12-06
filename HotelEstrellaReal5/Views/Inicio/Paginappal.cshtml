@@ -1,0 +1,166 @@
+﻿@{
+    ViewData["Title"] = "Estado de Habitaciones";
+}
+
+<h1 class="text-center mb-5">Estado de Habitaciones</h1>
+
+<!-- Contenedor principal -->
+<div class="container">
+    <!-- Fila de contenedores con totales -->
+    <div class="row mb-5">
+        <!-- Total de Habitaciones -->
+        <div class="col-md-2">
+            <div class="card bg-primary text-white">
+                <div class="card-header text-center">
+                    <i class="fas fa-bed"></i> Total Habitaciones
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">@ViewBag.TotalHabitaciones</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habitaciones Disponibles -->
+        <div class="col-md-2">
+            <div class="card bg-success text-white">
+                <div class="card-header text-center">
+                    <i class="fas fa-check-circle"></i> Habitaciones Disponibles
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">@ViewBag.HabitacionesDisponibles</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habitaciones Ocupadas -->
+        <div class="col-md-2">
+            <div class="card bg-danger text-white">
+                <div class="card-header text-center">
+                    <i class="fas fa-times-circle"></i> Habitaciones Ocupadas
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">@ViewBag.HabitacionesOcupadas</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habitaciones Reservadas -->
+        <div class="col-md-2">
+            <div class="card bg-warning text-white">
+                <div class="card-header text-center">
+                    <i class="fas fa-bookmark"></i> Habitaciones Reservadas
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">@ViewBag.HabitacionesReservadas</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habitaciones Inhabilitadas -->
+        <div class="col-md-2">
+            <div class="card bg-secondary text-white">
+                <div class="card-header text-center">
+                    <i class="fas fa-ban"></i> Habitaciones Inhabilitadas
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">@ViewBag.HabitacionesInhabilitadas</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habitaciones en Limpieza -->
+        <div class="col-md-2">
+            <div class="card bg-info text-white">
+                <div class="card-header text-center">
+                    <i class="fas fa-broom"></i> Habitaciones en Limpieza
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">@ViewBag.HabitacionesLimpieza</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Línea separadora -->
+    <hr class="my-5" style="border-top: 2px solid #ddd;">
+
+    <!-- Fila de habitaciones detalladas -->
+    <div class="row">
+        @foreach (var habitacion in ViewBag.Habitaciones)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 shadow-lg"
+                     style="background-color: @(habitacion.IdEstadoHabitacionNavigation.NombreEstadoHabitacion == "Disponible" ? "#4caf50" :
+                             habitacion.IdEstadoHabitacionNavigation.NombreEstadoHabitacion == "Ocupada" ? "#f44336" :
+                             habitacion.IdEstadoHabitacionNavigation.NombreEstadoHabitacion == "Reservada" ? "#ffeb3b" :
+                             habitacion.IdEstadoHabitacionNavigation.NombreEstadoHabitacion == "Inhabilitada" ? "#9e9e9e" :
+                             habitacion.IdEstadoHabitacionNavigation.NombreEstadoHabitacion == "Limpieza" ? "#cce5ff" : "#2196f3");">
+                    <div class="card-header text-center text-white">
+                        @* Icono por categoría *@
+                        @if (habitacion.IdCategoriaNavigation.Nombre == "Sencilla")
+                        {
+
+                        }
+                        else if (habitacion.IdCategoriaNavigation.Nombre == "Doble")
+                        {
+
+                        }
+                        else if (habitacion.IdCategoriaNavigation.Nombre == "Suite")
+                        {
+
+                        }
+                        else if (habitacion.IdCategoriaNavigation.Nombre == "Presidencial")
+                        {
+
+                        }
+                        @* Nombre de la categoría *@
+                        <span class="d-block mt-2">@habitacion.IdCategoriaNavigation.Nombre</span>
+                    </div>
+                    <div class="card-body text-center text-white">
+                        <h5 class="card-title">Habitación #@habitacion.IdHabitacion</h5> <i class="fas fa-bed"></i>
+                        <p>@habitacion.IdEstadoHabitacionNavigation.NombreEstadoHabitacion</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+                |
+
+    <!-- Incluir Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('habitacionesChart').getContext('2d');
+        var habitacionesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Disponibles', 'Ocupadas', 'Reservadas', 'Inhabilitadas', 'Limpieza'],
+                datasets: [{
+                    label: 'Número de Habitaciones',
+                    data: [
+        @ViewBag.HabitacionesDisponibles,
+        @ViewBag.HabitacionesOcupadas,
+        @ViewBag.HabitacionesReservadas,
+        @ViewBag.HabitacionesInhabilitadas,
+        @ViewBag.HabitacionesLimpieza
+                                            ],
+                    backgroundColor: ['#4caf50', '#f44336', '#ffeb3b', '#9e9e9e', '#2196f3'],
+                    borderColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}

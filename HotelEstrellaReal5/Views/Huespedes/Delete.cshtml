@@ -1,0 +1,89 @@
+﻿@model HotelEstrellaReal5.Models.Huespede
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-lg-6">
+    <div class="card-box">
+
+        <h4 class="header-title m-b-30 text-center">Eliminar huesped</h4>
+        <hr />
+        <address>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.IdHuesped)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdHuesped)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Identificacion)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Identificacion)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.NombreCompleto)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.NombreCompleto)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.FechaRegistro)
+                </dd>
+            </dl>
+        </address>
+
+        <address class="text-center">
+            <form asp-action="Delete" id="formulario" onsubmit="enviarformulario(event)">
+                <input type="hidden" asp-for="IdHuesped" />
+                <button type="submit" class="btn btn-danger waves-effect waves-light m-l-5">Eliminar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Salir</a>
+            </form>
+        </address>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function enviarformulario(event) {
+            event.preventDefault();
+
+            swal.fire({
+                title: '¿Estás seguro que quieres eliminar este Huesped?',
+                icon: 'warning',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                confirmButtonText: 'si'
+            }).then((resultado) => {
+                if (resultado.isConfirmed) {
+                    const formulario = document.getElementById('formulario');
+                    formulario.submit();
+                }
+            })
+        }
+    </script>
+}

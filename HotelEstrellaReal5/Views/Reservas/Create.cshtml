@@ -1,0 +1,257 @@
+﻿@using System.Globalization
+@model HotelEstrellaReal5.Models.Reserva
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-xl-11">
+    <div class="card-box">
+        <h4 class="header-title m-t-0 m-b-30 text-center">Crear Reserva</h4>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="form-group col-sm-4">
+                    <label asp-for="FechaEntrada" class="control-label"></label>
+                    <input asp-for="FechaEntrada" class="form-control" />
+                    <span asp-validation-for="FechaEntrada" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="FechaSalida" class="control-label"></label>
+                    <input asp-for="FechaSalida" class="form-control" />
+                    <span asp-validation-for="FechaSalida" class="text-danger"></span>
+                </div>
+                <div class="form-group col-4">
+                    <label asp-for="IdCliente" class="control-label">Identificación *</label>
+                    <input asp-for="IdCliente" type="number" id="documentoCliente" class="form-control" placeholder="Ingrese su documento" />
+                    <span asp-validation-for="IdCliente" class="text-danger" id="errorDocumento"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-4">
+                    <label asp-for="NombreCompleto" class="control-label">Nombres completo *</label>
+                    <input asp-for="NombreCompleto" id="nombreCliente" class="form-control" />
+                    <span asp-validation-for="NombreCompleto" class="text-danger"></span>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <label asp-for="IdCategoria" class="control-label"></label>
+                    <select asp-for="IdCategoria" id="CategoriaHabitacion" class="form-control" asp-items="ViewBag.IdCategoria" onchange="cargarHabitacionesDisponibles()"></select>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label asp-for="IdEstadoReserva" class="control-label"></label>
+                    <select asp-for="IdEstadoReserva" class="form-control" asp-items="ViewBag.IdEstadoReserva"></select>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Habitaciones -->
+                <div class="form-group col-4">
+                    <label asp-for="IdHabitacion" class="control-label">Habitación *</label>
+                    <select id="IdHabitacion" asp-for="IdHabitacion" class="form-control" asp-items="ViewBag.IdHabitacion"></select>
+                    <span asp-validation-for="IdHabitacion" class="text-danger"></span>
+
+                </div>
+
+               
+            </div>
+
+                        
+           @*  <!-- Mostrar Descripción de la Categoría -->
+            <div class="form-group">
+                <label class="control-label">Descripción de la Habitación</label>
+                <input id="DescripcionCategoria" class="form-control" readonly />
+            </div> *@
+
+            <div class="row">
+                <!-- Servicios -->
+                <div class="form-group col-4">
+                    <label>Servicios</label>
+                    <div class="checkbox-list">
+                        @foreach (var servicio in ViewBag.Servicios)
+                        {
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="serviciosSeleccionados" value="@servicio.IdServicio" id="servicio_@servicio.IdServicio" data-precio="@servicio.Valor" />
+                                <label class="form-check-label" for="servicio_@servicio.IdServicio">
+                                    @servicio.Nombre
+                                    @servicio.Valor.ToString("C0", new CultureInfo("es-CO")) <hr />
+                                </label>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+                <div class="col-4">
+                    <!-- Formulario de Huespedes -->
+                    <h5>Registrar Huéspedes</h5>
+                    <hr />
+                    <div id="huespedes" class="form-group">
+                        <!-- Formulario dinámico de huéspedes -->
+                        <label>Documento del Huésped *</label>
+                        <input type="number" id="huespedDocumento" class="form-control" placeholder="Ingrese el documento" />
+                        <label>Nombre Completo del Huésped *</label>
+                        <input type="text" id="huespedNombre" class="form-control" placeholder="Ingrese el nombre" />
+                        <label>Teléfono del Huésped *</label>
+                        <input type="tel" id="huespedTelefono" class="form-control" placeholder="Ingrese el Teléfono" />
+                        <label>Correo Electrónico del Huésped *</label>
+                        <input type="email" id="huespedCorreo" class="form-control" placeholder="Ingrese el correo" />
+                    </div>
+                    <button type="button" id="addHuesped" class="btn btn-success">Agregar Huésped</button>
+
+                    <h5 class="m-t-30">Huéspedes Agregados</h5>
+                    <hr />
+                    <ul id="huespedesAgregados" class="list-group">
+                        <!-- Lista de huéspedes añadidos -->
+                    </ul>
+                    <input type="hidden" id="huespedesData" name="huespedesData" />
+                </div>
+
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="form-group text-right m-b-0 ">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary waves-effect waves-light m-l-5">Cancelar</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+
+        // Validar el documento de cliente
+        $('#documentoCliente').change(function () {
+            var documento = $(this).val();
+            if (documento) {
+                $.ajax({
+                    url: '/Reservas/ObtenerClientePorDocumento',
+                    type: 'GET',
+                    data: { documento: documento },
+                    success: function (response) {
+                        if (response.success) {
+                            $('#nombreCliente').val(response.nombre);
+                            $('#errorDocumento').text('');
+                        } else {
+                            $('#nombreCliente').val('');
+                            $('#errorDocumento').text(response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Error al verificar el documento.');
+                    }
+                });
+            }
+        });
+
+    </script>
+
+    <script>
+        // Función para cargar habitaciones disponibles según la categoría y fechas seleccionadas
+        function cargarHabitacionesDisponibles() {
+            var idCategoria = $("#CategoriaHabitacion").val();
+            var fechaEntrada = $("#FechaEntrada").val();
+            var fechaSalida = $("#FechaSalida").val();
+
+            if (idCategoria && fechaEntrada && fechaSalida) {
+                $.get("/Reservas/ObtenerHabitacionesPorCategoria", { idCategoria: idCategoria, fechaInicio: fechaEntrada, fechaFin: fechaSalida }, function (data) {
+                    if (data.success) {
+                        var options = "<option value=''>Seleccione una habitación</option>";
+                        $.each(data.habitaciones, function (index, habitacion) {
+                            options += "<option value='" + habitacion.IdHabitacion + "'>" + habitacion.nombre + "</option>";
+                        });
+                        $("#IdHabitacion").html(options);
+                    } else {
+                        alert(data.message);
+                    }
+                });
+            }
+        }
+               
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            var huespedCount = 0;
+
+            // Función para mostrar los huéspedes almacenados
+            function cargarHuespedes() {
+                var huespedes = JSON.parse($('#huespedesData').val() || '[]');
+                huespedCount = huespedes.length;
+
+                $('#huespedesAgregados').empty(); // Limpiar lista
+                huespedes.forEach((huesped, index) => {
+                    var newHuesped = `
+                        <li class="list-group-item" id="huesped${index + 1}">
+                            ${huesped.NombreCompleto} - ${huesped.Identificacion} - ${huesped.Telefono} - ${huesped.Email}
+                            <button type="button" class="btn btn-danger btn-sm remove-huesped" data-id="${index + 1}">Borrar</button>
+                        </li>
+                    `;
+                    $('#huespedesAgregados').append(newHuesped);
+                });
+            }
+
+            // Llamar a cargarHuespedes al cargar la página
+            cargarHuespedes();
+
+            // Agregar huésped (actualización del script que ya tienes)
+            $('#addHuesped').click(function () {
+                // Tu lógica existente para agregar huéspedes
+                var documento = $('#huespedDocumento').val();
+                var nombre = $('#huespedNombre').val();
+                var telefono = $('#huespedTelefono').val();
+                var correo = $('#huespedCorreo').val();
+
+                if (documento && nombre && telefono && correo) {
+                    huespedCount++;
+                    var huesped = { Identificacion: documento, NombreCompleto: nombre, Telefono: telefono, Email: correo };
+
+                    // Agregar al campo oculto
+                    var huespedes = JSON.parse($('#huespedesData').val() || '[]');
+                    huespedes.push(huesped);
+                    $('#huespedesData').val(JSON.stringify(huespedes));
+
+                    // Añadir a la lista visible
+                    var newHuesped = `
+                        <li class="list-group-item" id="huesped${huespedCount}">
+                            ${nombre} - ${documento} - ${telefono} - ${correo}
+                            <button type="button" class="btn btn-danger btn-sm remove-huesped" data-id="${huespedCount}">Borrar</button>
+                        </li>
+                    `;
+                    $('#huespedesAgregados').append(newHuesped);
+
+                    // Limpiar los campos
+                    $('#huespedDocumento').val('');
+                    $('#huespedNombre').val('');
+                    $('#huespedTelefono').val('');
+                    $('#huespedCorreo').val('');
+                } else {
+                    alert('Por favor, complete todos los campos.');
+                }
+            });
+
+            // Eliminar huésped (actualización del script que ya tienes)
+            $(document).on('click', '.remove-huesped', function () {
+                var id = $(this).data('id');
+                $(`#huesped${id}`).remove();
+
+                // Actualizar el campo oculto
+                var huespedes = JSON.parse($('#huespedesData').val());
+                huespedes.splice(id - 1, 1);
+                $('#huespedesData').val(JSON.stringify(huespedes));
+
+                huespedCount--;
+            });
+        });
+
+    </script>
+    
+}
